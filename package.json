@@ -20,6 +20,8 @@
   "license": "ISC",
   "devDependencies": {
     "@devacademy/eslint-config": "^1.8.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.23",
     "@types/react-dom": "^18.0.7",
@@ -34,12 +36,14 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "jsdom": "^22.1.0",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
     "prettier": "2.6.1",
     "react": "^18.0.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
+    "supertest": "^6.3.3",
     "typescript": "~4.8.4",
     "vite": "^4.2.1",
     "vitest": "^0.30.1"
