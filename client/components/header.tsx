@@ -1,6 +1,5 @@
 
-import header from '../data/header'
-import imageUrl from '../big.png'
+import imageUrl from '../whistle.png'
 
 export default function Header() {
   return (
