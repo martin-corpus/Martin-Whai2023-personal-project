@@ -1,11 +1,11 @@
 
 import header from '../data/header'
-import imageUrl from '../logo.jpg'
+import imageUrl from '../big.png'
 
 export default function Header() {
   return (
-    <header>
-      <img src={imageUrl} alt="Logo" /> {header.name}
+    <header className="header">
+      <img src={imageUrl} alt="Logo" id="logo"/>
     </header>
   )
 }
