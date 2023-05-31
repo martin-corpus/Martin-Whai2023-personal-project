@@ -24,7 +24,7 @@ export default function Body() {
               <input type="text" placeholder="User Name"/>
             </div>
             <div>
-              <input type="password" placeholder="Password"/>
+              <input type="password" placeholder="User Password"/>
             </div>
             <div>
               <button type="submit">Join</button>
@@ -42,7 +42,7 @@ export default function Body() {
               <input type="text" placeholder="Company Name"/>
             </div>
             <div>
-              <input type="password" placeholder="Password"/>
+              <input type="password" placeholder="Company Password"/>
             </div>
             <div>
               <button type="submit">Join</button>
