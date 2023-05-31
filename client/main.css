@@ -26,6 +26,10 @@ body {
   max-height: 100px;
 }
 
+#Logo:hover {
+  border: 2px solid #dd0505;
+}
+
 /* BODY */
 
 .body {
@@ -129,7 +133,7 @@ button[type="submit"] {
 }
 
 .icon:hover {
-  background-color: #555555;
+  background-color: #dd0505;
 }
 
 a:visited {
