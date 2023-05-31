@@ -1,5 +1,6 @@
 import Header from "./header"
 import Body from "./body"
+import Footer from "./footer"
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
       </div>
       <div className="body">
         <Body />
+      </div>
+      <div className="footer">
+        <Footer />
       </div>
     </>  
   )

@@ -3,7 +3,7 @@ import imageUrl from '../whistle.png'
 
 export default function Header() {
   return (
-    <header className="header">
+    <header>
       <img src={imageUrl} alt="Logo" id="logo"/>
     </header>
   )
