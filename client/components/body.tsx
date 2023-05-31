@@ -1,5 +1,6 @@
 
 import imageUrl from '../name.png'
+import { FaUser, FaBuilding } from 'react-icons/fa'
 
 export default function Body() {
   return (
@@ -15,7 +16,9 @@ export default function Body() {
       {/* USER */}
           <div className="section">
             <div className="circle">
-              <img src="user-logo.png" alt="User Logo"/>
+              <span className="loginIcon">
+                <FaUser />
+              </span>
             </div>
             <div>
               <input type="text" placeholder="User Name"/>
@@ -24,14 +27,16 @@ export default function Body() {
               <input type="password" placeholder="Password"/>
             </div>
             <div>
-              <button type="submit">Submit</button>
+              <button type="submit">Join</button>
             </div>
           </div>
 
       {/* COMPANY */}
           <div className="section">
             <div className="circle">
-              <img src="company-logo.png" alt="Company Logo"/>
+              <span className="loginIcon">
+                <FaBuilding />
+              </span>  
             </div>
             <div>
               <input type="text" placeholder="Company Name"/>
@@ -40,7 +45,7 @@ export default function Body() {
               <input type="password" placeholder="Password"/>
             </div>
             <div>
-              <button type="submit">Submit</button>
+              <button type="submit">Join</button>
             </div>
           </div>
       </div>
