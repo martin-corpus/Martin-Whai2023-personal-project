@@ -116,3 +116,22 @@ button[type="submit"] {
   justify-content: center;
   align-items: center;
 }
+
+.icons {
+  display: 'flex';
+  justify-content: 'center';
+  color: rgb(54, 88, 236); 
+}
+
+.icons .icon {
+  margin: 0 15px; 
+  font-size: 30px; 
+}
+
+.icon:hover {
+  background-color: #555555;
+}
+
+a:visited {
+  color: rgb(54, 88, 236);
+}
