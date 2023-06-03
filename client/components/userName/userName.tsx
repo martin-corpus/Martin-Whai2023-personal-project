@@ -1,14 +1,14 @@
-import Header from "../header"
+import Header2 from "../header2"
 import Footer from "../footer"
 import UserBody from "./userBody"
 
 function UserName() {
     return (
       <>
-      <div className="header">
-        <Header />
+      <div className="header2">
+        <Header2 />
       </div>
-      <div className="body">
+      <div className="userBody">
         <UserBody />
        
       </div>
