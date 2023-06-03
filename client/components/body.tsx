@@ -1,6 +1,8 @@
 
 import imageUrl from '../name.png'
 import { FaUser, FaBuilding } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+
 
 export default function Body() {
   return (
@@ -27,7 +29,9 @@ export default function Body() {
               <input type="password" placeholder="User Password"/>
             </div>
             <div>
-              <button type="submit">Join</button>
+              <Link to={'/username/'}>
+                <button type="submit">Join</button>
+              </Link>
             </div>
           </div>
 
