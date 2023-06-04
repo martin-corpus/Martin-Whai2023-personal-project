@@ -16,8 +16,24 @@ export default function UserBody() {
         </div>
 
         <h3 id="applications">Applications</h3>
-        <div className="userApplications">
-
+        <div className="userApplicationsContainer">
+            <div className="userApplications">
+                <div className="applicationbox">Box 1</div>
+                <div className="applicationbox">Box 2</div>
+                <div className="applicationbox">Box 3</div>
+                <div className="applicationbox">Box 4</div>
+                <div className="applicationbox">Box 5</div>
+                <div className="applicationbox">Box 6</div>
+                <div className="applicationbox">Box 7</div>
+                <div className="applicationbox">Box 8</div>
+                <div className="applicationbox">Box 9</div>
+                <div className="applicationbox">Box 10</div>
+                <div className="applicationbox">Box 11</div>
+                <div className="applicationbox">Box 12</div>
+                <div className="applicationbox">Box 13</div>
+                <div className="applicationbox">Box 14</div>
+                <div className="applicationbox">Box 15</div>
+            </div>
         </div>
     </>
   )

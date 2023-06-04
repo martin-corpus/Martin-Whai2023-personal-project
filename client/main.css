@@ -212,11 +212,28 @@ a:visited {
   margin-left: 10px;
 }
 
-.userApplications {
-  height: 200px;
+.userApplicationsContainer {
   width: 100%;
+  overflow-x: auto;
+}
+
+.userApplications {
   background-color: #dbdbdb;
-  margin-top: 10px;
   border-top: 2px solid rgb(39, 70, 209);
   border-bottom: 2px solid rgb(39, 70, 209);
+ 
+  
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.applicationbox {
+  flex-shrink: 0;
+  width: 220px;
+  height: 150px;
+  margin-right: 10px;
+  background-color: #dbdbdb;
+  border: 2px solid rgb(39, 70, 209);
 }
