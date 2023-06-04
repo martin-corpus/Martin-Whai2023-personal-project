@@ -7,6 +7,21 @@ export default function NewUserBody() {
   const [email, setEmail] = useState('')
   const [image, setImage] = useState('')
 
+
+  const checkIfEmailExists = (email: string): boolean => {
+    const existingEmails = ['existing@example.com', 'another@example.com']
+    return existingEmails.includes(email)
+  }
+
+  // const keyIdentifier = email;
+  const emailExists = checkIfEmailExists(email);
+
+  if (emailExists) {
+    console.log('Email already exists')
+  } else {
+    console.log('Form submitted:', name, password, email, image)
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
@@ -28,6 +43,7 @@ export default function NewUserBody() {
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setImage(event.target.value)
   }
+
 
   return (
     <>
