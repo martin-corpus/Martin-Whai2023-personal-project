@@ -23,22 +23,24 @@ export default function Body() {
               </span>
             </div>
             
-            {/* <form> */}
+            <form>
               <div>
-                <input className="loginInput" type="email" placeholder="User Email"/>
+                <input className="loginEmail" type="email" placeholder="User Email"/>
               </div>
               <div>
-                <input className="loginInput" type="password" placeholder="User Password"/>
+                <input className="loginPassword" type="password" placeholder="User Password"/>
               </div>
               <div>
                 <Link to={'/username/'}>
                   <button type="submit" className="loginButton">Login</button>
                 </Link>
               </div>
-            {/* </form> */}
+            </form>
 
             <div>
-              <button type="submit" className="joinButton">Join</button>
+              <Link to={'/newuser/'}>
+                <button type="submit" className="joinButton">Join</button>
+              </Link>  
             </div>
           </div>
 
@@ -50,17 +52,17 @@ export default function Body() {
               </span>  
             </div>
             
-            {/* <form> */}
+            <form>
               <div>
-                <input className="loginInput" type="email" placeholder="Company Email"/>
+                <input className="loginEmail" type="email" placeholder="Company Email"/>
               </div>
               <div>
-                <input className="loginInput" type="password" placeholder="Company Password"/>
+                <input className="loginPassword" type="password" placeholder="Company Password"/>
               </div>
               <div>
                 <button type="submit" className="loginButton">Login</button>
               </div>
-            {/* </form> */}
+            </form>
 
             <div>
               <button type="submit" className="joinButton">Join</button>

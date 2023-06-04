@@ -118,32 +118,54 @@ body {
   color: rgb(39, 70, 209);
 }
 
-input[type="email"],
-input[type="password"] {
+.loginEmail {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.loginPassword {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-
-button[type="submit"] {
-  width: 100%;
-  padding: 8px;
+.loginButton {
+  width: 30%;
+  padding: 12px;
   background-color: rgb(54, 88, 236);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
-button[type="submit"]:hover {
+.joinButton {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(54, 88, 236);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.loginButton:hover {
+  background-color: rgb(19, 50, 179);
+}
+
+.joinButton:hover {
   background-color: rgb(19, 50, 179);
 }
 
 
 
-/* FOOTER */
+/********************** FOOTER *******************/
 
 .footer {
   position: fixed;
@@ -169,14 +191,14 @@ button[type="submit"]:hover {
 }
 
 .icon:hover {
-  background-color: #dd0505;
+  background-color: rgb(19, 50, 179);
 }
 
 a:visited {
   color: rgb(54, 88, 236);
 }
 
-/* USERBODY */
+/******************* USERBODY *******************/
 
 .userBody {
   background-color: #ffffff;
@@ -322,5 +344,110 @@ a:visited {
 }
 
 .searchSubmit:hover {
+  background-color: rgb(19, 50, 179);
+}
+
+/* *******************************NEW USER ****************/
+
+.newUserBody {
+  padding-top: 130px;
+}
+
+.newUserDiv {
+  margin-top: 20px;
+  display: grid;
+  justify-items: center;
+}
+
+.newUserCircle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #dbdbdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.newUserIcon {
+  font-size: 80px;
+  color: rgb(39, 70, 209);
+}
+
+.newUser {
+  color: rgb(39, 70, 209);
+}
+
+/************* NEW USER FORM ****************/
+.centerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.newUserDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.newUserCircle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #dbdbdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newUserIcon {
+  font-size: 80px;
+  color: rgb(39, 70, 209);
+}
+
+.newUser {
+  color: rgb(39, 70, 209);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  color:rgb(39, 70, 209);
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+input {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  
+}
+
+#newUserButton {
+  width: 100%;
+  padding: 14px;
+  background-color: rgb(54, 88, 236);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#newUserButton:hover {
   background-color: rgb(19, 50, 179);
 }

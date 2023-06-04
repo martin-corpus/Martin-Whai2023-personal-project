@@ -1,4 +1,5 @@
 import UserName from './components/userName/userName'
+import NewUser from './components/newUser/newUser'
 
 import {
   createBrowserRouter,
@@ -10,7 +11,9 @@ import App from './components/App'
 
 export const routes = createRoutesFromElements(
   <Route path="/">
+    <Route path="/newuser" element={<NewUser />} />
     <Route path="/username" element={<UserName />} />
+    
     <Route path="/" element={<App />} />
   
     
