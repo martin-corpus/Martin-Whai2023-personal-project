@@ -13,7 +13,8 @@ export const routes = createRoutesFromElements(
   <Route path="/">
     <Route path="/newuser" element={<NewUser />} />
     <Route path="/username" element={<UserName />} />
-    
+    {/* username/results?? or /results?? */}
+    {/* <Route path="/username/" element={<UserName />} /> */}
     <Route path="/" element={<App />} />
   
     
