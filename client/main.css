@@ -175,9 +175,48 @@ a:visited {
 
 .userBody {
   background-color: #ffffff;
+  padding-top: 130px;
+}
+
+.userContainer {
+  display: grid;
+  grid-template-columns: minmax(auto, max-content) minmax(auto, max-content);
+  gap: 10px;
+}
+
+.userCircle {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: #dbdbdb;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding-top: 120px;
+  margin-top: 10px;
+  margin-left: 10px;
+  
+}
+
+.userIcon {
+  font-size: 40px;
+  color: rgb(39, 70, 209);
+}
+
+#userName {
+  color: rgb(39, 70, 209);
+}
+
+#applications {
+  color: rgb(39, 70, 209);
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.userApplications {
+  height: 200px;
+  width: 100%;
+  background-color: #dbdbdb;
+  margin-top: 10px;
+  border-top: 2px solid rgb(39, 70, 209);
+  border-bottom: 2px solid rgb(39, 70, 209);
 }
