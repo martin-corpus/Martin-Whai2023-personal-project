@@ -22,16 +22,23 @@ export default function Body() {
                 <FaUser />
               </span>
             </div>
+            
+            {/* <form> */}
+              <div>
+                <input className="loginInput" type="email" placeholder="User Email"/>
+              </div>
+              <div>
+                <input className="loginInput" type="password" placeholder="User Password"/>
+              </div>
+              <div>
+                <Link to={'/username/'}>
+                  <button type="submit" className="loginButton">Login</button>
+                </Link>
+              </div>
+            {/* </form> */}
+
             <div>
-              <input type="text" placeholder="User Name"/>
-            </div>
-            <div>
-              <input type="password" placeholder="User Password"/>
-            </div>
-            <div>
-              <Link to={'/username/'}>
-                <button type="submit">Join</button>
-              </Link>
+              <button type="submit" className="joinButton">Join</button>
             </div>
           </div>
 
@@ -42,14 +49,21 @@ export default function Body() {
                 <FaBuilding />
               </span>  
             </div>
+            
+            {/* <form> */}
+              <div>
+                <input className="loginInput" type="email" placeholder="Company Email"/>
+              </div>
+              <div>
+                <input className="loginInput" type="password" placeholder="Company Password"/>
+              </div>
+              <div>
+                <button type="submit" className="loginButton">Login</button>
+              </div>
+            {/* </form> */}
+
             <div>
-              <input type="text" placeholder="Company Name"/>
-            </div>
-            <div>
-              <input type="password" placeholder="Company Password"/>
-            </div>
-            <div>
-              <button type="submit">Join</button>
+              <button type="submit" className="joinButton">Join</button>
             </div>
           </div>
       </div>

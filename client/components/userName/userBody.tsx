@@ -39,26 +39,36 @@ export default function UserBody() {
         <div className="userSearchContainer">
             <h3 id="search">Search For Companies:</h3>
 
-            <div className="userSearchParameters">
-                <div className="searchLocation">
-                    <label htmlFor="location" id="location">Location</label>
-                    <select className="dropdown">
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
-                    </select>
-                </div>
+            <form>
+                <div className="userSearchParameters">
+                    <div className="searchLocation">
+                        <label htmlFor="location" id="location">Location</label>         
+                            <select className="dropdown">
+                                <option value="option1">North Island - North</option>
+                                <option value="option2">North Island - Central</option>
+                                <option value="option3">North Island - South</option>
+                                <option value="option3">South Island - North</option>
+                                <option value="option3">South Island - Central</option>
+                                <option value="option3">South Island - South</option>
+                            </select>                      
+                    </div>
 
-                <div className="searchField">
-                    <label htmlFor="field" id="field">Field</label>
-                    <select className="dropdown">
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
-                    </select>
+                    <div className="searchField">
+                        <label htmlFor="field" id="field">Field</label>                   
+                            <select className="dropdown">
+                                <option value="option1">Software Development/Engineering</option>
+                                <option value="option2">Data Science/Analytics</option>
+                                <option value="option3">Cybersecurity</option>
+                                <option value="option3">Network Engineering</option>
+                                <option value="option3">Cloud Computing</option>
+                                <option value="option3">Artificial Intelligence (AI) and Machine Learning (ML)</option>
+                            </select>                      
+                    </div>
                 </div>
-            </div>
-            <button type="submit" className="searchSubmit">Submit</button>
+                <div className="submitContainer">
+                    <button type="submit" className="searchSubmit">Submit</button>
+                </div>
+            </form>
         </div>
     </>
   )
