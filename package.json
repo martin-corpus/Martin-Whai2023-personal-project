@@ -8,8 +8,15 @@
   },
   "main": "server/index.js",
   "scripts": {
-    "dev": "vite",
+    "start": "node dist/server/index.js",
     "test": "vitest",
+    "dev": "run-p dev:client dev:server",
+    "dev:client": "vite",
+    "dev:server": "nodemon --watch server",
+    "build": "run-s build:client build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p server/tsconfig.json",
+    "knex": "knex --knexfile server/db/knexfile.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
   },
@@ -68,7 +75,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
     "knex": "^2.4.2",
-    "react-icons": "^4.9.0"
+    "react-icons": "^4.9.0",
+    "sqlite3": "^5.1.6"
   },
   "bugs": {
     "url": "https://github.com/dev-academy-challenges/react-boilerplate/issues"

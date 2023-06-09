@@ -1,6 +1,6 @@
 import Header2 from "../header2"
 import Footer from "../footer"
-import UserNameBody from "./userNameBody"
+import UserBody from "./userSearchBody"
 
 function UserName() {
     return (
@@ -8,8 +8,8 @@ function UserName() {
       <div className="header2">
         <Header2 />
       </div>
-      <div className="userNameBody">
-        <UserNameBody />
+      <div className="userBody">
+        <UserBody />
        
       </div>
       <div className="footer">

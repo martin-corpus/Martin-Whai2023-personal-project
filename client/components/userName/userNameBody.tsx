@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'
 import { useState } from 'react'
 
-export default function UserBody() {
+export default function UserNameBody() {
   
 const [location, setLocation] = useState('')
 const [field, setField] = useState('')
