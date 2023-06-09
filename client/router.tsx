@@ -1,5 +1,6 @@
 import UserName from './components/userName/userName'
 import NewUser from './components/newUser/newUser'
+import UserNameSearch from './components/userNameSearch/userNameSearch'
 
 import {
   createBrowserRouter,
@@ -13,7 +14,7 @@ export const routes = createRoutesFromElements(
   <Route path="/">
     <Route path="/newuser" element={<NewUser />} />
     <Route path="/username" element={<UserName />} />
-      {/* <Route path="/username/search" element={<UserNameSearch />} /> */}
+      <Route path="/username/search" element={<UserNameSearch />} />
     <Route path="/" element={<App />} />
   
     

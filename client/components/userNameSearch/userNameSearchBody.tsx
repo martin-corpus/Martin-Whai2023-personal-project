@@ -2,28 +2,28 @@ import { Link } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'
 import { useState } from 'react'
 
-export default function UserNameBody() {
+export default function UserNameSearchBody() {
   
-const [location, setLocation] = useState('')
-const [field, setField] = useState('')
+// const [location, setLocation] = useState('')
+// const [field, setField] = useState('')
   
-const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    console.log('Location:', location)
-    console.log('Field:', field)
-}
+// const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+//     event.preventDefault()
+//     console.log('Location:', location)
+//     console.log('Field:', field)
+// }
 
-const handleLocationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setLocation(event.target.value)
-}
+// const handleLocationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+//     setLocation(event.target.value)
+// }
   
-const handleFieldChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setField(event.target.value)
-}
+// const handleFieldChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+//     setField(event.target.value)
+// }
 
 return (
     <>
-        <div className="userContainer">
+        {/* <div className="userContainer">
             <div className="userCircle">
                 <span className="userIcon">
                 <FaUser />
@@ -85,12 +85,11 @@ return (
                 </div>
                 </div>
                 <div className="submitContainer">
-                    <Link to={'/username/search'}>
-                        <button type="submit" className="searchSubmit">Submit</button>
-                    </Link>
+                <button type="submit" className="searchSubmit">Submit</button>
                 </div>
             </form>
-        </div>
+        </div> */}
+        <h1>hello</h1>
     </>
   )
 }

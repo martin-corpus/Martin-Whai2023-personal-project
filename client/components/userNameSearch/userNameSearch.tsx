@@ -1,15 +1,15 @@
 import Header2 from "../header2"
 import Footer from "../footer"
-import UserBody from "./userSearchBody"
+import UserNameSearchBody from "./userNameSearchBody"
 
-function UserName() {
+function UserNameSearch() {
     return (
       <>
       <div className="header2">
         <Header2 />
       </div>
-      <div className="userBody">
-        <UserBody />
+      <div className="userNameSearchBody">
+        <UserNameSearchBody />
        
       </div>
       <div className="footer">
@@ -19,4 +19,4 @@ function UserName() {
     )
   }
   
-  export default UserName
+  export default UserNameSearch
