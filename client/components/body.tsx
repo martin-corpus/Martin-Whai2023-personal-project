@@ -1,5 +1,5 @@
 
-import imageUrl from '../name.png'
+import imageUrl from '/images/name.png'
 import { FaUser, FaBuilding } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
