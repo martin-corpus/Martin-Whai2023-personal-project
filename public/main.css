@@ -238,6 +238,7 @@ a:visited {
   margin-bottom: 0px;
   margin-left: 10px;
   margin-top: 20px;
+  font-size: 25px;
 }
 
 .userApplicationsContainer {
@@ -452,8 +453,4 @@ input {
   background-color: rgb(19, 50, 179);
 }
 
- /**********************USERNAMESEARCH BODY ***************/
- .userNameSearchBody {
-  background-color: #ffffff;
-  padding-top: 130px;
-}
+ 

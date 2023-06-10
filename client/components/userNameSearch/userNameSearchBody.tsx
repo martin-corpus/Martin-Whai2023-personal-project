@@ -23,6 +23,46 @@ export default function UserNameSearchBody() {
 
 return (
     <>
+      <div className="userContainer">
+            <div className="userCircle">
+                <span className="userIcon">
+                <FaUser />
+                </span>
+            </div>
+            <div>
+                <h1 id="userName">Username</h1>
+            </div>
+        </div>
+
+        
+        <div className="searchResultsContainer">
+          <div className="searchResultsSection">
+            <h3 id="searchResultsTitle">By Location</h3>
+              <div className="searchResultsRow">
+                  <div className="companybox">Box 1</div>
+                  <div className="companybox">Box 2</div>
+                  <div className="companybox">Box 3</div>
+              </div>
+          </div>
+        </div>
+
+        
+        <div className="searchResultsContainer">
+          <div className="searchResultsSection">
+            <h3 id="searchResultsTitle">By Field</h3>
+              <div className="searchResultsRow">
+                  <div className="companybox">Box 1</div>
+                  <div className="companybox">Box 2</div>
+                  <div className="companybox">Box 3</div>
+              </div>
+          </div>
+        </div>
+
+
+
+
+
+
     <ul>
         {companies.map(({ id, image, name, field, location, description, vacancies }) => {
             return (

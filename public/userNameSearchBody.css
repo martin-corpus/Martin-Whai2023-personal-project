@@ -1,0 +1,43 @@
+/**********************USERNAMESEARCH BODY ***************/
+.userNameSearchBody {
+    background-color: #ffffff;
+    padding-top: 130px;
+  }
+  
+  #searchResultsTitle {
+    color: rgb(39, 70, 209);
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 25px;
+    
+  }
+
+  .searchResultsContainer {
+    width: 100%;
+    padding: 0px;
+    display: flex; 
+    justify-content: center; 
+    overflow: hidden; 
+  }
+  
+  .searchResultsRow {
+    background-color: #dbdbdb;
+    border: 2px solid rgb(39, 70, 209);
+    padding: 10px;
+    display: flex; 
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .companybox {
+    flex-shrink: 0;
+    width: 260px;
+    height: 220px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    border: 2px solid rgb(39, 70, 209);
+  }
+
+  .companybox:last-child {
+    margin-right: 0px;
+  }
