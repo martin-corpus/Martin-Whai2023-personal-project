@@ -1,13 +1,23 @@
-// import connection from './connection'
-// import { Widget, NewWidget } from "../../models/Widget"
+import connection from './connection'
+import { Companies } from "../../models/companies"
 
 
-// export function getWidgets(db = connection) {
-//   return db<Widget>('widgets').select()
-// }
+export function getCompanies(db = connection) {
+    return db<Companies>('companies')
+      .select()
+      .then((companies) => {
+        console.log('Companies:', companies);
+        return companies;
+      })
+      .catch((error) => {
+        console.error('Error fetching companies:', error);
+        throw error;
+      });
+  }
+  
 
 
-// // add new widget 
+// add new widget 
 
 // export async function addNewWidget(widget: Widget, db = connection) {
 //   return db('widgets').insert(widget).returning('*')

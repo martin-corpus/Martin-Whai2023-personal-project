@@ -1,20 +1,24 @@
-// import request from 'superagent'
-// import { PeopleModel } from '../Models/people'
-// import { HomeworldModel } from '../Models/homeworld'
-// import { StarshipModel } from '../Models/starship'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import request from 'superagent'
+import { Companies } from "../../models/companies"
 
-// export async function getPeople(peopleID: number): Promise<PeopleModel> {
-//   const response = await request.get('https://swapi.dev/api/people/' + peopleID)
-//   console.log(response)
-//   return response.body
-// }
-// export async function getHomeworld(homeworldURL: string): Promise<HomeworldModel> {
-//   const response = await request.get(homeworldURL)
-//   console.log(response)
-//   return response.body
-// }
-// export async function getStarship(starshipURL: string): Promise<StarshipModel> {
-//   const response = await request.get(starshipURL)
-//   console.log(response)
-//   return response.body
-// }
+const companyUrl = '/api/v1/companies/'
+
+export async function getCompanies(): Promise<Company[]> {
+    try {
+        console.log('Before request')
+        const response = await request.get(companyUrl)
+        console.log('After request')
+        console.log('Response:', response.body)
+        console.log(response.body.companies)
+        if (response.body && response.body.companies) {
+            console.log(response.body.companies)
+            return response.body.companies
+        } else {
+            return [] // Return an empty array if response or companies are null/empty
+        }
+    } catch (error) {
+        console.error(error)
+        return [] 
+    }
+}

@@ -1,7 +1,10 @@
-// export interface NewWidget {
-//     name: string
-//     price: number
-//     mfg: string
-//     inStock: number
-//     rating: number
-//   }
+export interface Companies {
+    id: integer
+    image: string
+    name: string
+    field: string
+    location: string
+    mfg: string
+    description: string
+    vacancies: boolean
+  }
