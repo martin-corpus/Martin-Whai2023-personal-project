@@ -1,5 +1,5 @@
 export interface Companies {
-    id: integer
+    id: number
     image: string
     name: string
     field: string
