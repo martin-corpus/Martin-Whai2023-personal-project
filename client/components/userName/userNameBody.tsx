@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'
 import { useState } from 'react'
 
@@ -6,11 +6,16 @@ export default function UserNameBody() {
   
 const [location, setLocation] = useState('')
 const [field, setField] = useState('')
+const [locationCompanies, setLocationCompanies] = useState([] as Companies[])
+const [fieldCompanies, setFieldCompanies] = useState([] as Companies[])
+const history = useHistory()
   
 const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     console.log('Location:', location)
     console.log('Field:', field)
+    history.push(`/username/search?location=${location}&field=${field}`)
+    
 }
 
 const handleLocationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -63,6 +68,7 @@ return (
                 <div className="searchLocation">
                     <label htmlFor="location" id="location">Location</label>
                     <select className="dropdown" value={location} onChange={handleLocationChange}>
+                        <option value="">-- Select Location --</option>
                         <option value="option1">North Island - North</option>
                         <option value="option2">North Island - Central</option>
                         <option value="option3">North Island - South</option>
@@ -75,6 +81,7 @@ return (
                 <div className="searchField">
                     <label htmlFor="field" id="field">Field</label>
                     <select className="dropdown" value={field} onChange={handleFieldChange}>
+                        <option value="">-- Select Field --</option>
                         <option value="option1">Software Development/Engineering</option>
                         <option value="option2">Data Science/Analytics</option>
                         <option value="option3">Cybersecurity</option>
@@ -85,7 +92,7 @@ return (
                 </div>
                 </div>
                 <div className="submitContainer">
-                    <Link to={'/username/search'}>
+                    <Link to={`/username/search?location=${location}&field=${field}`}>
                         <button type="submit" className="searchSubmit">Submit</button>
                     </Link>
                 </div>

@@ -5,8 +5,8 @@ const router = express.Router()
 
 //server = /api/v1
 
-/// GET /api/v1/companies/:location
-router.get('/companies/:location', async (req, res) => {
+// GET /api/v1/companies/location/:location
+router.get('/companies/location/:location', async (req, res) => {
   try {
     const location = req.params.location
     const companies = await getCompaniesByLocation(location)
@@ -18,8 +18,8 @@ router.get('/companies/:location', async (req, res) => {
   }
 })
 
-// GET /api/v1/companies/:field
-router.get('/companies/:field', async (req, res) => {
+// GET /api/v1/companies/field/:field
+router.get('/companies/field/:field', async (req, res) => {
   try {
     const field = req.params.field
     const companies = await getCompaniesByField(field)

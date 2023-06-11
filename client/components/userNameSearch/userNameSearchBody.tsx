@@ -14,12 +14,18 @@ export default function UserNameSearchBody() {
   useEffect(() => {
     async function fetchCompanies() {
       try {
+
+        console.log('Location:', location)
+        console.log('Field:', field)
+
         if (location) {
           const locationCompanies = await getCompaniesByLocation(location)
+          console.log('Location Companies:', locationCompanies)
           setLocationCompanies(locationCompanies)
         }
         if (field) {
           const fieldCompanies = await getCompaniesByField(field)
+          console.log('Field Companies:', fieldCompanies)
           setFieldCompanies(fieldCompanies)
         }
       } catch (error) {
@@ -48,14 +54,8 @@ return (
             <h3 id="searchResultsTitle">By Location</h3>
               <div className="searchResultsRow">
 
-              {locationCompanies.map(({ id, image, name }) => (
+              {locationCompanies.map(({ location, image, name }) => (
                 <>
-                  <div className="companybox" key={id}>
-                    <img src={image} alt={name} className="companyImage" />
-                  </div>
-                  <div className="companybox" key={location}>
-                    <img src={image} alt={name} className="companyImage" />
-                  </div>
                   <div className="companybox" key={location}>
                     <img src={image} alt={name} className="companyImage" />
                   </div>
@@ -75,25 +75,13 @@ return (
             <h3 id="searchResultsTitle">By Field</h3>
               <div className="searchResultsRow">
 
-              {fieldCompanies.map(({ id, image, name }) => (
+              {fieldCompanies.map(({ field, image, name }) => (
                 <>
-                  <div className="companybox" key={id}>
+                  <div className="companybox" key={field}>
                     <img src={image} alt={name} className="companyImage" />
-                  </div>
-                  <div className="companybox" key={location}>
-                    <img src={image} alt={name} className="companyImage" />
-                  </div>
-                  <div className="companybox" key={location}>
-                    <img src={image} alt={name} className="companyImage" />
-                  </div>
+                  </div>  
                 </>
               ))}
-
-
-
-                  {/* <div className="companybox">Box 1</div>
-                  <div className="companybox">Box 2</div>
-                  <div className="companybox">Box 3</div> */}
               </div>
           </div>
         </div>
