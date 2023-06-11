@@ -1,4 +1,4 @@
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'
 import { useState } from 'react'
 
@@ -6,15 +6,11 @@ export default function UserNameBody() {
   
 const [location, setLocation] = useState('')
 const [field, setField] = useState('')
-const [locationCompanies, setLocationCompanies] = useState([] as Companies[])
-const [fieldCompanies, setFieldCompanies] = useState([] as Companies[])
-const history = useHistory()
   
 const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     console.log('Location:', location)
     console.log('Field:', field)
-    history.push(`/username/search?location=${location}&field=${field}`)
     
 }
 
@@ -69,12 +65,12 @@ return (
                     <label htmlFor="location" id="location">Location</label>
                     <select className="dropdown" value={location} onChange={handleLocationChange}>
                         <option value="">-- Select Location --</option>
-                        <option value="option1">North Island - North</option>
-                        <option value="option2">North Island - Central</option>
-                        <option value="option3">North Island - South</option>
-                        <option value="option4">South Island - North</option>
-                        <option value="option5">South Island - Central</option>
-                        <option value="option6">South Island - South</option>
+                        <option value="North Island - North">North Island - North</option>
+                        <option value="North Island - Central">North Island - Central</option>
+                        <option value="North Island - South">North Island - South</option>
+                        <option value="South Island - North">South Island - North</option>
+                        <option value="South Island - Central">South Island - Central</option>
+                        <option value="South Island - South">South Island - South</option>
                     </select>
                 </div>
 
@@ -82,12 +78,12 @@ return (
                     <label htmlFor="field" id="field">Field</label>
                     <select className="dropdown" value={field} onChange={handleFieldChange}>
                         <option value="">-- Select Field --</option>
-                        <option value="option1">Software Development/Engineering</option>
-                        <option value="option2">Data Science/Analytics</option>
-                        <option value="option3">Cybersecurity</option>
-                        <option value="option4">Network Engineering</option>
-                        <option value="option5">Cloud Computing</option>
-                        <option value="option6">Artificial Intelligence (AI) and Machine Learning (ML)</option>
+                        <option value="Software Development/Engineering">Software Development/Engineering</option>
+                        <option value="Data Science/Analytics">Data Science/Analytics</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Network Engineering">Network Engineering</option>
+                        <option value="Cloud Computing">Cloud Computing</option>
+                        <option value="Artificial Intelligence (AI) and Machine Learning (ML)">Artificial Intelligence (AI) and Machine Learning (ML)</option>
                     </select>
                 </div>
                 </div>

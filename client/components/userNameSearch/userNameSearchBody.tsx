@@ -15,8 +15,16 @@ export default function UserNameSearchBody() {
     async function fetchCompanies() {
       try {
 
-        console.log('Location:', location)
-        console.log('Field:', field)
+        const urlParams = new URLSearchParams(window.location.search)
+        const locationParam = urlParams.get('location')
+        const fieldParam = urlParams.get('field')
+
+        if (locationParam) {
+          setLocation(locationParam)
+        }
+        if (fieldParam) {
+          setField(fieldParam)
+        }
 
         if (location) {
           const locationCompanies = await getCompaniesByLocation(location)
