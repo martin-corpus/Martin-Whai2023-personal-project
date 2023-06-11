@@ -3,23 +3,31 @@ import { FaUser } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import request from 'superagent'
 import { Companies } from "../../../models/companies"
-import { getCompanies } from "../../apiClient"
+import { getCompaniesByLocation, getCompaniesByField } from "../../apiClient"
 
 export default function UserNameSearchBody() {
-    const [companies, setCompanies] = useState([] as Companies[])
+  const [location, setLocation] = useState('')
+  const [field, setField] = useState('')
+  const [locationCompanies, setLocationCompanies] = useState([] as Companies[])
+  const [fieldCompanies, setFieldCompanies] = useState([] as Companies[])
 
-    useEffect(() => {
-      async function fetchCompanies() {
-        try {
-          const companies = await getCompanies()
-          setCompanies(companies)
-          console.log(companies)
-        } catch(error) {
-          console.log(error)
+  useEffect(() => {
+    async function fetchCompanies() {
+      try {
+        if (location) {
+          const locationCompanies = await getCompaniesByLocation(location)
+          setLocationCompanies(locationCompanies)
         }
+        if (field) {
+          const fieldCompanies = await getCompaniesByField(field)
+          setFieldCompanies(fieldCompanies)
+        }
+      } catch (error) {
+        console.log(error)
       }
-      fetchCompanies()
-    },[])
+    }
+    fetchCompanies()
+  }, [location, field])
 
 return (
     <>
@@ -39,9 +47,24 @@ return (
           <div className="searchResultsSection">
             <h3 id="searchResultsTitle">By Location</h3>
               <div className="searchResultsRow">
-                  <div className="companybox">Box 1</div>
+
+              {locationCompanies.map(({ id, image, name }) => (
+                <>
+                  <div className="companybox" key={id}>
+                    <img src={image} alt={name} className="companyImage" />
+                  </div>
+                  <div className="companybox" key={location}>
+                    <img src={image} alt={name} className="companyImage" />
+                  </div>
+                  <div className="companybox" key={location}>
+                    <img src={image} alt={name} className="companyImage" />
+                  </div>
+                </>
+              ))}
+
+                  {/* <div className="companybox">Box 1</div>
                   <div className="companybox">Box 2</div>
-                  <div className="companybox">Box 3</div>
+                  <div className="companybox">Box 3</div> */}
               </div>
           </div>
         </div>
@@ -51,33 +74,29 @@ return (
           <div className="searchResultsSection">
             <h3 id="searchResultsTitle">By Field</h3>
               <div className="searchResultsRow">
-                  <div className="companybox">Box 1</div>
+
+              {fieldCompanies.map(({ id, image, name }) => (
+                <>
+                  <div className="companybox" key={id}>
+                    <img src={image} alt={name} className="companyImage" />
+                  </div>
+                  <div className="companybox" key={location}>
+                    <img src={image} alt={name} className="companyImage" />
+                  </div>
+                  <div className="companybox" key={location}>
+                    <img src={image} alt={name} className="companyImage" />
+                  </div>
+                </>
+              ))}
+
+
+
+                  {/* <div className="companybox">Box 1</div>
                   <div className="companybox">Box 2</div>
-                  <div className="companybox">Box 3</div>
+                  <div className="companybox">Box 3</div> */}
               </div>
           </div>
         </div>
-
-
-
-
-
-
-    <ul>
-        {companies.map(({ id, image, name, field, location, description, vacancies }) => {
-            return (
-                <li key={id}>
-                    Id: {id} <br />
-                    Image: {image} <br />
-                    Name: {name} <br />
-                    Field: {field} <br />
-                    Location: {location} <br />
-                    Description: {description} <br />
-                    Vacancies: {vacancies} <br />
-                </li>    
-            )}
-        )}
-    </ul>
     </>
   )
 }
