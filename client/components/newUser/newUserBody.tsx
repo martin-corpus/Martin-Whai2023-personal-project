@@ -1,49 +1,54 @@
-import { useState } from 'react'
+import { useState, FormEvent, ChangeEvent, useEffect } from 'react'
 import { FaUser } from 'react-icons/fa'
+import { NewUser } from "../../models/users"
+import { addNewUser } from "../../apiClient"
 
-export default function NewUserBody() {
-  const [name, setName] = useState('')
-  const [password, setPassword] = useState('')
-  const [email, setEmail] = useState('')
-  const [image, setImage] = useState('')
+const initialFormData = {
+  name: '',
+  password: '',
+  email: '',
+  image: null,
+}
 
+interface Props {
+  newUser: NewUser[]
+  setNewUser: (newUser: NewUser[]) => void
+}
+
+export default function PostNewUser(props: Props) {
+  const [form, setForm] = useState(initialFormData)
 
   const checkIfEmailExists = (email: string): boolean => {
-    const existingEmails = ['existing@example.com', 'another@example.com']
+    const existingEmails = ['john@example.com', 'jane@example.com']
     return existingEmails.includes(email)
   }
 
-  // const keyIdentifier = email;
-  const emailExists = checkIfEmailExists(email);
-
-  if (emailExists) {
-    console.log('Email already exists')
-  } else {
-    console.log('Form submitted:', name, password, email, image)
-  }
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    try {
+      const { name, password, email, image } = form
+      const emailExists = checkIfEmailExists(email)
 
-    console.log('Form submitted:', name, password, email, image)
+      if (emailExists) {
+        console.log('Email already exists');
+      } else {
+        console.log('Form submitted:', name, password, email, image)
+
+      const newUserToAdd = await addNewUser(form)
+      props.setNewUser([...props.newUser, newUserToAdd])
+      setForm(initialFormData)
+      }
+    }catch(error) {
+      console.log(error)
+    }
   }
 
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value)
-  }
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target
 
-  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value)
+    const newForm = { ...form, [name]: value }
+    setForm(newForm)
   }
-
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  }
-  
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setImage(event.target.value)
-  }
-
 
   return (
     <>
@@ -64,8 +69,10 @@ export default function NewUserBody() {
           <input
             type="text"
             id="name"
-            value={name}
-            onChange={handleNameChange}
+            value={form.name}
+            onChange={handleChange}
+            name="name"
+            required
           />
         </div>
 
@@ -74,8 +81,10 @@ export default function NewUserBody() {
           <input
             type="password"
             id="password"
-            value={password}
-            onChange={handlePasswordChange}
+            value={form.password}
+            onChange={handleChange}
+            name="password"
+            required
           />
         </div>
 
@@ -84,8 +93,10 @@ export default function NewUserBody() {
           <input
             type="email"
             id="email"
-            value={email}
-            onChange={handleEmailChange}
+            value={form.email}
+            onChange={handleChange}
+            name="email"
+            required
           />
         </div>
 
@@ -94,9 +105,9 @@ export default function NewUserBody() {
           <input
             type="file"
             id="image"
-            onChange={handleImageChange}
+            onChange={handleChange}
             accept="image/*"
-            required
+            name="image"
           />
         </div>
 
