@@ -1,15 +1,16 @@
 import express from 'express'
-import { getCompaniesByLocation, getCompaniesByField } from '../db/dbcompanies'
+import { getCompaniesByLocationId, getCompaniesByFieldId } from '../db/dbcompanies'
 // import { Companies } from "../../models/companies"
 const router = express.Router()
 
 //server = /api/v1
 
-// GET /api/v1/companies/location/:location
-router.get('/companies/location/:location', async (req, res) => {
+// GET /api/v1/companies/location/:id
+router.get('/companies/location/:id', async (req, res) => {
+  console.log('something')
   try {
-    const location = req.params.location
-    const companies = await getCompaniesByLocation(location)
+    const location = req.params.id
+    const companies = await getCompaniesByLocationId(Number(location))
     console.log(`Fetched companies by location (${location}):`, companies)
     res.json({ companies })
   } catch (error) {
@@ -18,11 +19,11 @@ router.get('/companies/location/:location', async (req, res) => {
   }
 })
 
-// GET /api/v1/companies/field/:field
-router.get('/companies/field/:field', async (req, res) => {
+// GET /api/v1/companies/field/:id
+router.get('/companies/field/:id', async (req, res) => {
   try {
-    const field = req.params.field
-    const companies = await getCompaniesByField(field)
+    const field = req.params.id
+    const companies = await getCompaniesByFieldId(Number(field))
     console.log(`Fetched companies by field (${field}):`, companies)
     res.json({ companies })
   } catch (error) {

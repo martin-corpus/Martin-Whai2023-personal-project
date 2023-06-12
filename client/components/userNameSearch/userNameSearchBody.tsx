@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import request from 'superagent'
@@ -6,33 +6,22 @@ import { Companies } from "../../../models/companies"
 import { getCompaniesByLocation, getCompaniesByField } from "../../apiClient"
 
 export default function UserNameSearchBody() {
-  const [location, setLocation] = useState('')
-  const [field, setField] = useState('')
+
   const [locationCompanies, setLocationCompanies] = useState([] as Companies[])
   const [fieldCompanies, setFieldCompanies] = useState([] as Companies[])
-
+  const [searchParams] = useSearchParams()
+  
   useEffect(() => {
     async function fetchCompanies() {
       try {
 
-        const urlParams = new URLSearchParams(window.location.search)
-        const locationParam = urlParams.get('location')
-        const fieldParam = urlParams.get('field')
-
-        if (locationParam) {
-          setLocation(locationParam)
-        }
-        if (fieldParam) {
-          setField(fieldParam)
-        }
-
-        if (location) {
-          const locationCompanies = await getCompaniesByLocation(location)
+        if (searchParams.get('location')) {
+          const locationCompanies = await getCompaniesByLocation(searchParams.get('location') as string)
           console.log('Location Companies:', locationCompanies)
           setLocationCompanies(locationCompanies)
         }
-        if (field) {
-          const fieldCompanies = await getCompaniesByField(field)
+        if (searchParams.get('field')) {
+          const fieldCompanies = await getCompaniesByField(searchParams.get('field') as string)
           console.log('Field Companies:', fieldCompanies)
           setFieldCompanies(fieldCompanies)
         }
@@ -41,7 +30,7 @@ export default function UserNameSearchBody() {
       }
     }
     fetchCompanies()
-  }, [location, field])
+  }, [searchParams])
 
 return (
     <>

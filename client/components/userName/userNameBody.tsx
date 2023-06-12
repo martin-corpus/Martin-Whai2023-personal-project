@@ -65,12 +65,12 @@ return (
                     <label htmlFor="location" id="location">Location</label>
                     <select className="dropdown" value={location} onChange={handleLocationChange}>
                         <option value="">-- Select Location --</option>
-                        <option value="North Island - North">North Island - North</option>
-                        <option value="North Island - Central">North Island - Central</option>
-                        <option value="North Island - South">North Island - South</option>
-                        <option value="South Island - North">South Island - North</option>
-                        <option value="South Island - Central">South Island - Central</option>
-                        <option value="South Island - South">South Island - South</option>
+                        <option value="1">North Island - North</option>
+                        <option value="2">North Island - Central</option>
+                        <option value="3">North Island - South</option>
+                        <option value="4">South Island - North</option>
+                        <option value="5">South Island - Central</option>
+                        <option value="6">South Island - South</option>
                     </select>
                 </div>
 
@@ -78,12 +78,12 @@ return (
                     <label htmlFor="field" id="field">Field</label>
                     <select className="dropdown" value={field} onChange={handleFieldChange}>
                         <option value="">-- Select Field --</option>
-                        <option value="Software Development/Engineering">Software Development/Engineering</option>
-                        <option value="Data Science/Analytics">Data Science/Analytics</option>
-                        <option value="Cybersecurity">Cybersecurity</option>
-                        <option value="Network Engineering">Network Engineering</option>
-                        <option value="Cloud Computing">Cloud Computing</option>
-                        <option value="Artificial Intelligence (AI) and Machine Learning (ML)">Artificial Intelligence (AI) and Machine Learning (ML)</option>
+                        <option value="1">Software Development/Engineering</option>
+                        <option value="2">Data Science/Analytics</option>
+                        <option value="3">Cybersecurity</option>
+                        <option value="4">Network Engineering</option>
+                        <option value="5">Cloud Computing</option>
+                        <option value="6">Artificial Intelligence (AI) and Machine Learning (ML)</option>
                     </select>
                 </div>
                 </div>

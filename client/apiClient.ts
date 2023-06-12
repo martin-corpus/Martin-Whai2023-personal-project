@@ -8,17 +8,18 @@ import { NewUser, User } from "../models/users"
 //// COMPANIES
 const companyUrl = '/api/v1/companies'
 
-export async function getCompaniesByLocation(location: string): Promise<Companies[]> {
-    const response = await request.get(`${companyUrl}/location/${location}`)
+export async function getCompaniesByLocation(locationId: string): Promise<Companies[]> {
+    console.log(`${companyUrl}/location/${locationId}`)
+    const response = await request.get(`${companyUrl}/location/${locationId}`)
     console.log('Location Response:', response.body)
     const companies = response.body.companies || []
     console.log('Location Companies:', companies)
     return companies
 }
   
-export async function getCompaniesByField(field: string): Promise<Companies[]> {
-    const response = await request.get(`${companyUrl}/field/${field}`)
-    console.log(response.body.companies)
+export async function getCompaniesByField(fieldId: string): Promise<Companies[]> {
+    const response = await request.get(`${companyUrl}/field/${fieldId}`)
+    console.log(response.body)
     return response.body.companies
 }
 

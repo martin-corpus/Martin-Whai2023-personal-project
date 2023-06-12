@@ -2,12 +2,12 @@ import connection from './connection'
 import { Companies } from "../../models/companies"
 
 
-export function getCompaniesByLocation(location: string, db = connection) {
+export function getCompaniesByLocationId(locationId: number, db = connection) {
   return db<Companies>('companies')
-    .where('location', '=', location)
+    .where('id', '=', locationId)
     .select()
     .then((companies) => {
-      console.log(`Companies with location (${location}):`, companies)
+      console.log(`Companies with location (${locationId}):`, companies)
       return companies
     })
     .catch((error) => {
@@ -16,12 +16,12 @@ export function getCompaniesByLocation(location: string, db = connection) {
     })
 }
 
-export function getCompaniesByField(field: string, db = connection) {
+export function getCompaniesByFieldId(fieldId: number, db = connection) {
   return db<Companies>('companies')
-    .where('field', '=', field)
+    .where('id', '=', fieldId)
     .select()
     .then((companies) => {
-      console.log(`Companies with field (${field}):`, companies)
+      console.log(`Companies with field (${fieldId}):`, companies)
       return companies
     })
     .catch((error) => {
