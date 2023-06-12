@@ -58,10 +58,6 @@ return (
                   </div>
                 </>
               ))}
-
-                  {/* <div className="companybox">Box 1</div>
-                  <div className="companybox">Box 2</div>
-                  <div className="companybox">Box 3</div> */}
               </div>
           </div>
         </div>
