@@ -4,7 +4,6 @@ export interface Companies {
     name: string
     field: string
     location: string
-    mfg: string
     description: string
     vacancies: boolean
   }

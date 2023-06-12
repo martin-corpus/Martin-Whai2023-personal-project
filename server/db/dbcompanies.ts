@@ -30,3 +30,16 @@ export function getCompaniesByField(field: string, db = connection) {
     })
 }
 
+export function getCompanyByName(name: string, db = connection) {
+  return db<Companies>('companies')
+    .where('name', '=', name)
+    .select()
+    .then((companies) => {
+      console.log(`Company with name (${name}):`, companies)
+      return companies[0]
+    })
+    .catch((error) => {
+      console.error('Error fetching company by name:', error)
+      throw error
+    })
+}

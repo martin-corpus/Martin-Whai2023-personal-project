@@ -7,6 +7,7 @@ import { NewUser, User } from "../models/users"
 
 //// COMPANIES
 const companyUrl = '/api/v1/companies'
+const companyNameUrl = '/api/v1/company'
 
 export async function getCompaniesByLocation(location: string): Promise<Companies[]> {
     console.log(`${companyUrl}/location/${location}`)
@@ -22,6 +23,16 @@ export async function getCompaniesByField(field: string): Promise<Companies[]> {
     console.log('Field Response:', response.body)
     return response.body.companies
 }
+
+export async function getCompanyByName(name: string): Promise<Companies> {
+    const response = await request.get(`${companyNameUrl}/${name}`)
+    console.log('Company Response:', response.body.company)
+    return response.body.company
+}
+
+
+
+
 
 ///// NEW USERS
 const newUserUrl = '/api/v1/newUser'

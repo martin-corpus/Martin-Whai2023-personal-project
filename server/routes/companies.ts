@@ -1,5 +1,5 @@
 import express from 'express'
-import { getCompaniesByLocation, getCompaniesByField } from '../db/dbcompanies'
+import { getCompaniesByLocation, getCompaniesByField, getCompanyByName } from '../db/dbcompanies'
 // import { Companies } from "../../models/companies"
 const router = express.Router()
 
@@ -28,6 +28,19 @@ router.get('/companies/field/:field', async (req, res) => {
     res.json({ companies })
   } catch (error) {
     console.error('Error fetching companies by field:', error)
+    res.status(500).json({ error: 'Internal server error' })
+  }
+})
+
+// GET /api/v1/company/:name
+router.get('/company/:name', async (req, res) => {
+  try {
+    const name = req.params.name
+    const company = await getCompanyByName(name)
+    console.log(`Fetched company by name (${name}):`, company)
+    res.json({ company })
+  } catch (error) {
+    console.error('Error fetching commpany by name:', error)
     res.status(500).json({ error: 'Internal server error' })
   }
 })
