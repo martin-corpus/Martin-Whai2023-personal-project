@@ -39,16 +39,27 @@ export default function CompanyPageBody() {
           </div>
 
 
-            <div>
-                <h2>Company Details</h2>
-            
+            <div className="companyDescriptionConatiner">
+
                 {company ? (
                   <>
                     <img src={company.image} alt='company logo' className='soloCompanyImage'/>
-                    <p>Name: {company.name}</p>
-                    <p>Location: {company.location}</p>
-                    <p>Field: {company.field}</p>
-                    <p>Description: {company.description}</p>
+                    <div className="companyLabelContainer">
+                      <p><span className="label">Name</span></p>
+                      <p>{company.name}</p>
+                    </div>
+                    <div className="companyLabelContainer">
+                      <p><span className="label">Location</span></p>
+                      <p>{company.location}</p>
+                    </div>
+                    <div className="companyLabelContainer">
+                      <p><span className="label">Field</span></p>
+                      <p>{company.field}</p>
+                    </div>
+                    <div className="companyLabelContainer">
+                      <p><span className="label">Description</span></p>
+                      <p>{company.description}</p>
+                    </div>
                   </>
                 ) : (
                   <p>Loading...</p>
