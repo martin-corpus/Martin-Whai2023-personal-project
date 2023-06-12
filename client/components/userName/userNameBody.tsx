@@ -45,14 +45,6 @@ return (
                 <div className="applicationbox">Box 5</div>
                 <div className="applicationbox">Box 6</div>
                 <div className="applicationbox">Box 7</div>
-                <div className="applicationbox">Box 8</div>
-                <div className="applicationbox">Box 9</div>
-                <div className="applicationbox">Box 10</div>
-                <div className="applicationbox">Box 11</div>
-                <div className="applicationbox">Box 12</div>
-                <div className="applicationbox">Box 13</div>
-                <div className="applicationbox">Box 14</div>
-                <div className="applicationbox">Box 15</div>
             </div>
         </div>
 

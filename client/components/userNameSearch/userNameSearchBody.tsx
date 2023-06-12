@@ -52,13 +52,13 @@ return (
               <div className="searchResultsRow">
 
               {locationCompanies.map(({ location, image, name }) => (
-                <>
+                
                   <div className="companybox" key={location}>
                   <Link to={`/company?name=${name}`}>
                     <img src={image} alt={name} className="companyImage" />
                   </Link>
                   </div>
-                </>
+                
               ))}
               </div>
           </div>
@@ -71,13 +71,13 @@ return (
               <div className="searchResultsRow">
 
               {fieldCompanies.map(({ field, image, name }) => (
-                <>
+                
                   <div className="companybox" key={field}>
                   <Link to={`/company?name=${name}`}>
                     <img src={image} alt={name} className="companyImage" />
                   </Link>
                   </div>  
-                </>
+                
               ))}
               </div>
           </div>
