@@ -29,15 +29,11 @@ export default function CompanyPageBody() {
       // REACT QUERY FOR VACANCIES
 
       const companyId = Number(company?.id)
+
       const vacanciesQuery = useQuery(['vacancies', companyId], () => getVacancciesByCompanyId(companyId))
 
-      if (vacanciesQuery.isError) {
-        return <div>There was an error trying to get the vacancies</div>
-      }
-      if (vacanciesQuery.isLoading) {
-        return <div>Loading your vacancies</div>
-      }
-
+      console.log(vacanciesQuery.data)
+      console.log(vacanciesQuery.error)
 
       return (
         <>
@@ -48,7 +44,14 @@ export default function CompanyPageBody() {
               {company.vacancies && (
                 <div className="vacancyContainer">
                   <div className="vacancyNotification">Vacancies Available</div>
-                  <div>Position: {vacanciesQuery.data.position}</div>
+                  {
+                    vacanciesQuery.isError ?
+                      <div>There was an error trying to get the vacancies</div>
+                      : vacanciesQuery.isLoading ?
+                        <div>Loading your vacancies</div>
+                        :
+                        <div>Position: {vacanciesQuery.data.position}</div>
+                  }
                 </div>
               )}
 

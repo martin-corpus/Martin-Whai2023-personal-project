@@ -25,3 +25,5 @@ router.get('/vacancies/:companyId', async (req, res) => {
       res.status(500).send('Could not get vacancy')
     }
   })
+
+  export default router

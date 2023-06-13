@@ -11,7 +11,7 @@ export default function UserNameSearchBody() {
   const [locationCompanies, setLocationCompanies] = useState([] as Companies[])
   const [fieldCompanies, setFieldCompanies] = useState([] as Companies[])
   const [searchParams] = useSearchParams()
-  
+  console.log(locationCompanies)
   useEffect(() => {
     async function fetchCompanies() {
       try {
