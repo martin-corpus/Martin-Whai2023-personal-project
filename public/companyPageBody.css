@@ -31,4 +31,5 @@
 .soloCompanyImage {
     width: 260px;
     height: 207px;
+    border: 2px solid rgb(39, 70, 209);
   }

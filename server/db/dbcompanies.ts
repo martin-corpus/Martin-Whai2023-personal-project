@@ -43,3 +43,13 @@ export function getCompanyByName(name: string, db = connection) {
       throw error
     })
 }
+
+// export async function getFruitById(fruitId: number): Promise<Fruit> {
+//   const fruit = await db('fruit').where('id', fruitId).select('*').first()
+//   return fruit
+// }
+
+// export async function addFruit(newFruit: FruitData): Promise<Fruit> {
+//   const [fruit] = await db('fruit').insert(newFruit).returning('*')
+//   return fruit
+// }
