@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import request from 'superagent'
 import { Companies } from "../../../models/companies"
 import { getCompaniesByLocation, getCompaniesByField } from "../../apiClient"
+import  HiUserName  from '../../components/hiUserName'
 
 export default function UserNameSearchBody() {
 
@@ -34,17 +35,7 @@ export default function UserNameSearchBody() {
 
 return (
     <>
-      <div className="userContainer">
-            <div className="userCircle">
-                <span className="userIcon">
-                <FaUser />
-                </span>
-            </div>
-            <div>
-                <h1 id="userName">Username</h1>
-            </div>
-        </div>
-
+      <HiUserName />
         
         <div className="searchResultsContainer">
           <div className="searchResultsSection">

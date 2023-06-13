@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'
 import { useState } from 'react'
+import  HiUserName  from '../../components/hiUserName'
 
 export default function UserNameBody() {
   
@@ -24,16 +25,7 @@ const handleFieldChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
 
 return (
     <>
-        <div className="userContainer">
-            <div className="userCircle">
-                <span className="userIcon">
-                <FaUser />
-                </span>
-            </div>
-            <div>
-                <h1 id="userName">Hi username!</h1>
-            </div>
-        </div>
+        <HiUserName />
 
         <h3 id="applications">Applications</h3>
         <div className="userApplicationsContainer">

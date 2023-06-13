@@ -3,6 +3,7 @@ import { FaUser } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import { getCompanyByName } from "../../apiClient"
 import { Companies } from "../../../models/companies"
+import  HiUserName  from '../../components/hiUserName'
 
 export default function CompanyPageBody() {
     const [searchParams] = useSearchParams()
@@ -27,17 +28,7 @@ export default function CompanyPageBody() {
 
       return (
         <>
-          <div className="userContainer">
-            <div className="userCircle">
-                <span className="userIcon">
-                <FaUser />
-                </span>
-            </div>
-            <div>
-                <h1 id="userName">Username</h1>
-            </div>
-          </div>
-
+         <HiUserName />
 
             <div className="companyDescriptionConatiner">
 
