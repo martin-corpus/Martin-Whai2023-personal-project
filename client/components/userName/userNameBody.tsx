@@ -14,7 +14,7 @@ useEffect(() => {
     const applicationboxes = document.querySelectorAll('.applicationbox')
     const boxesArray = Array.from(applicationboxes) as HTMLElement[]
 
-    const showCurrentLogo = () => {
+    const showCurrentBoxes = () => {
         const startIndex = currentIndex * 3
         const endIndex = startIndex + 3
     
@@ -27,13 +27,13 @@ useEffect(() => {
         })
       }
 
-      const showNextLogo = () => {
+      const showNextBox = () => {
         setCurrentIndex((prevIndex) =>
           prevIndex < Math.floor(boxesArray.length / 3) ? prevIndex + 1 : 0
         )
       }
-
-      const showPreviousLogo = () => {
+      
+      const showPreviousBox = () => {
         setCurrentIndex((prevIndex) =>
           prevIndex > 0 ? prevIndex - 1 : Math.floor(boxesArray.length / 3)
         )
@@ -43,22 +43,22 @@ useEffect(() => {
     const rightArrow = document.querySelector('.rightArrow')
 
     if (leftArrow) {
-      leftArrow.addEventListener('click', showPreviousLogo)
+      leftArrow.addEventListener('click', showPreviousBox)
     }
 
     if (rightArrow) {
-      rightArrow.addEventListener('click', showNextLogo)
+      rightArrow.addEventListener('click', showNextBox)
     }
 
-    showCurrentLogo()
+    showCurrentBoxes()
 
     return () => {
         if (leftArrow) {
-          leftArrow.removeEventListener('click', showPreviousLogo)
+          leftArrow.removeEventListener('click', showPreviousBox)
         }
   
         if (rightArrow) {
-          rightArrow.removeEventListener('click', showNextLogo)
+          rightArrow.removeEventListener('click', showNextBox)
         }
       }
     }, [currentIndex])
@@ -86,27 +86,27 @@ const handleFieldChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
 return (
     <>
         <HiUserName />
-
-        <h3 id="applications">Applications</h3>
+        
+        
         <div className="userApplicationsContainer">
+        <h3 id="applications">Applications</h3>
             <div className="userApplications">
                 
                 <div className="leftArrow">
                     <i className="fa-solid fa-chevron-left"></i>
                 </div>
 
-                <div className="applicationbox" id="box1">Box 1</div>
-                <div className="applicationbox" id="box2">Box 2</div>
-                <div className="applicationbox" id="box3">Box 3</div>
-                <div className="applicationbox" id="box4">Box 4</div>
-                <div className="applicationbox" id="box5">Box 5</div>
-                <div className="applicationbox" id="box6">Box 6</div>
-                <div className="applicationbox" id="box7">Box 7</div>
+                <div className="applicationbox" id="box1">Application 1</div>
+                <div className="applicationbox" id="box2">Application 2</div>
+                <div className="applicationbox" id="box3">Application 3</div>
+                <div className="applicationbox" id="box4">Application 4</div>
+                <div className="applicationbox" id="box5">Application 5</div>
+                <div className="applicationbox" id="box6">Application 6</div>
+                <div className="applicationbox" id="box7">Application 7</div>
 
                 <div className="rightArrow">
                     <i className="fa-solid fa-chevron-right"></i>
                 </div>
-
             </div>
         </div>
 

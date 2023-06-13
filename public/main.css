@@ -249,19 +249,17 @@ a:visited {
 }
 
 .userApplicationsContainer {
-  width: 100%;
-  
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .userApplications {
   background-color: #dbdbdb;
-  border-top: 2px solid rgb(39, 70, 209);
-  border-bottom: 2px solid rgb(39, 70, 209);
+  border: 2px solid rgb(39, 70, 209);
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 100%;
 
 }
 
@@ -287,12 +285,27 @@ a:visited {
   color: rgb(19, 50, 179);
 }
 
+#box1,
+#box2,
+#box3,
+#box4,
+#box5,
+#box6,
+#box7 {
+  color: rgb(218, 36, 36);
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 130px;
+  text-align: center;
+}
+
 /* ///////////SEARCH  */
 
 #search {
   color: rgb(39, 70, 209);
   margin-bottom: 3px;
   font-size: 30px;
+  
 }
 
 .userSearchContainer {
