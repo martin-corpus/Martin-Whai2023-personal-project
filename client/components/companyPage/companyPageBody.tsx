@@ -28,36 +28,39 @@ export default function CompanyPageBody() {
 
       return (
         <>
-         <HiUserName />
+      <HiUserName />
 
-            <div className="companyDescriptionConatiner">
-
-                {company ? (
-                  <>
-                    <img src={company.image} alt='company logo' className='soloCompanyImage'/>
-                    <div className="companyLabelContainer">
-                      <p><span className="label">Name</span></p>
-                      <p>{company.name}</p>
-                    </div>
-                    <div className="companyLabelContainer">
-                      <p><span className="label">Location</span></p>
-                      <p>{company.location}</p>
-                    </div>
-                    <div className="companyLabelContainer">
-                      <p><span className="label">Field</span></p>
-                      <p>{company.field}</p>
-                    </div>
-                    <div className="companyLabelContainer">
-                      <p><span className="label">Description</span></p>
-                      <p>{company.description}</p>
-                    </div>
-                  </>
-                ) : (
-                  <p>Loading...</p>
-                )}
-           
+      {company && (
+        <>
+          {company.vacancies && (
+            <div className="vacancyContainer">
+              <div className="vacancyNotification">Vacancies Available</div>
+              <div>Hello</div>
             </div>
+          )}
+
+          <div className="companyDescriptionContainer">
+            <img src={company.image} alt='company logo' className='soloCompanyImage'/>
+            <div className="companyLabelContainer">
+              <p><span className="label">Name</span></p>
+              <p>{company.name}</p>
+            </div>
+            <div className="companyLabelContainer">
+              <p><span className="label">Location</span></p>
+              <p>{company.location}</p>
+            </div>
+            <div className="companyLabelContainer">
+              <p><span className="label">Field</span></p>
+              <p>{company.field}</p>
+            </div>
+            <div className="companyLabelContainer">
+              <p><span className="label">Description</span></p>
+              <p>{company.description}</p>
+            </div>
+          </div>
         </>
-      )
+      )}
+    </>
+  )
 }
   
