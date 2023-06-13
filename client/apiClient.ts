@@ -2,6 +2,7 @@
 import request from 'superagent'
 import { Companies } from "../models/companies"
 import { NewUser, User } from "../models/users"
+import { Vacancies } from "../models/vacancies"
 
 
 
@@ -31,9 +32,6 @@ export async function getCompanyByName(name: string): Promise<Companies> {
 }
 
 
-
-
-
 ///// NEW USERS
 const newUserUrl = '/api/v1/newUser'
 
@@ -42,3 +40,11 @@ export async function addNewUser(newUser: NewUser): Promise<User> {
     console.log(response.body)
     return response.body.user
 }
+
+/////// VACANCIES
+
+// GET /api/v1/vacancies/:companyId
+export async function getVacancciesByCompanyId(companyId: number): Promise<Vacancies> {
+    const response = await request.get(`/api/v1/vacancies/${companyId}`)
+    return response.body.vacancies
+  }
