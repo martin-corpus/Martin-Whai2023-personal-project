@@ -42,9 +42,9 @@ return (
             <h3 id="searchResultsTitle">By Location</h3>
               <div className="searchResultsRow">
 
-              {locationCompanies.map(({ location, image, name }, index) => (
+              {locationCompanies.map(({ location, image, name, vacancies }, index) => (
                 
-                  <div className="companybox" key={index}>
+                  <div className={`companybox ${vacancies ? 'withVacancies' : ''}`} key={index}>
                   <Link to={`/company?name=${name}`}>
                     <img src={image} alt={name} className="companyImage" />
                   </Link>
@@ -61,9 +61,9 @@ return (
             <h3 id="searchResultsTitle">By Field</h3>
               <div className="searchResultsRow">
 
-              {fieldCompanies.map(({ field, image, name }, index) => (
+              {fieldCompanies.map(({ field, image, name, vacancies }, index) => (
                 
-                  <div className="companybox" key={index}>
+                  <div className={`companybox ${vacancies ? 'withVacancies' : ''}`} key={index}>
                   <Link to={`/company?name=${name}`}>
                     <img src={image} alt={name} className="companyImage" />
                   </Link>

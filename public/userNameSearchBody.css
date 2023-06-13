@@ -46,3 +46,21 @@
   .companybox:last-child {
     margin-right: 0px;
   }
+
+  @keyframes blinking {
+    0% {
+      border-color: red;
+    }
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: red;
+    }
+  }
+  
+  .withVacancies {
+    animation: blinking 2s linear infinite;
+    border-width: 6px;
+    border-style: solid;
+  }

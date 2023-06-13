@@ -30,7 +30,7 @@ exports.seed = (knex) => {
             field: 'Software Development and Engineering',
             location: 'South Island - Central',
             description: 'ByteMasters Development is a software engineering company that combines creativity and technical proficiency to deliver high-quality software products. Their skilled team of developers focuses on efficient coding practices and collaborates closely with clients to ensure the development process aligns with their business objectives.',
-            vacancies: false,
+            vacancies: true,
           },
           {
             id: 4,
@@ -84,7 +84,7 @@ exports.seed = (knex) => {
             field: 'Cybersecurity',
             location: 'South Island - North',
             description: 'SecureNet Technologies specializes in providing end-to-end cybersecurity solutions tailored to meet the unique needs of businesses. Their team of cybersecurity experts offers a range of services, including network security, data encryption, and secure cloud solutions, ensuring that businesses can operate securely in the face of ever-evolving cyber threats.',
-            vacancies: false,
+            vacancies: true,
           },
           {
             id: 10,
@@ -147,7 +147,7 @@ exports.seed = (knex) => {
             field: 'Artificial Intelligence (AI) and Machine Learning (ML)',
             location: 'South Island - North',
             description: 'Synapse AI Technologies is a leading provider of AI and ML solutions, driving innovation and automation across various industries. Their team of AI experts develops intelligent algorithms, machine learning models, and data-driven applications that enable businesses to extract valuable insights, automate processes, and make informed decisions.',
-            vacancies: false,
+            vacancies: true,
           },
           {
             id: 17,
@@ -165,7 +165,7 @@ exports.seed = (knex) => {
             field: 'Artificial Intelligence (AI) and Machine Learning (ML)',
             location: 'South Island - Central',
             description: 'MindBot Solutions is an AI and ML company that focuses on developing intelligent chatbot solutions and virtual assistants. Leveraging AI technologies, they create conversational interfaces that enhance customer engagement, automate customer support, and improve overall user experiences, enabling businesses to deliver personalized and efficient interactions.',
-            vacancies: false,
+            vacancies: true,
           },
         ])
       })

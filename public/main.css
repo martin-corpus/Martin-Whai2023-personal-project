@@ -240,11 +240,9 @@ a:visited {
 }
 
 /* //////////APPLICATIONS  */
-#applications {
+.applications {
   color: rgb(39, 70, 209);
-  margin-bottom: 0px;
-  margin-left: 10px;
-  margin-top: 20px;
+  margin: 20px 0 0 10px;
   font-size: 25px;
 }
 
