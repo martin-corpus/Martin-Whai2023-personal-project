@@ -28,11 +28,7 @@ export default function CompanyPageBody() {
 
       // REACT QUERY FOR VACANCIES
 
-      if (!company) {
-        return <p>Loading...</p>
-      }
-    
-      const companyId = Number(company.id)
+      const companyId = Number(company?.id)
       const vacanciesQuery = useQuery(['vacancies', companyId], () => getVacancciesByCompanyId(companyId))
 
       if (vacanciesQuery.isError) {

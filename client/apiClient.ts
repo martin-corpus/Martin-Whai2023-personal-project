@@ -44,7 +44,7 @@ export async function addNewUser(newUser: NewUser): Promise<User> {
 /////// VACANCIES
 
 // GET /api/v1/vacancies/:companyId
-export async function getVacancciesByCompanyId(companyId: number): Promise<Vacancies> {
+export async function getVacancciesByCompanyId(companyId: string): Promise<Vacancies> {
     const response = await request.get(`/api/v1/vacancies/${companyId}`)
     return response.body.vacancies
   }
