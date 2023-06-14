@@ -53,20 +53,22 @@
     margin-right: 0px;
   }
 
+  /* //////////////// ANIMATION */
+
   @keyframes blinking {
-    0% {
-      border-color: red;
-    }
-    50% {
+    0%, 100% {
+      box-shadow: 0 0 5px red, 0 0 20px red, 0 0 35px red;
       border-color: transparent;
     }
-    100% {
+    50% {
+      box-shadow: none;
       border-color: red;
     }
   }
   
+  
   .withVacancies {
-    animation: blinking 2s linear infinite;
-    border-width: 6px;
+    animation: blinking 1.5s linear infinite;
+    border-width: 2px;
     border-style: solid;
   }

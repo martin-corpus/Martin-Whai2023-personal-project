@@ -51,9 +51,13 @@ export default function CompanyPageBody() {
                       : vacanciesQuery.isLoading ?
                         <div>Loading your vacancies</div>
                         :
-                        <div>
+                        <div className="vacanciesList">
                           {vacanciesQuery.data.map((vacancy, index) => (
-                            <div key={index}>Position: {vacancy.position}</div>
+                            <Link to={`/vacancy/${vacancy.id}`} key={index} className="vacancyItem">
+                              <div key={index} className="vacancyItemContent">
+                                <strong>Position - </strong> {vacancy.position}
+                              </div>
+                            </Link>  
                           ))}
                         </div>
                   }
