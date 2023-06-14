@@ -1,5 +1,5 @@
 import express from 'express'
-import { getVacanciesByCompanyId } from '../db/dbvacancies'
+import { getVacanciesByCompanyId, getVacancyById } from '../db/dbvacancies'
 
 const router = express.Router()
 
@@ -20,6 +20,27 @@ router.get('/vacancies/:companyId', async (req, res) => {
         return
       }
       res.json(vacancies)
+    } catch (err) {
+      console.log(err)
+      res.status(500).send('Could not get vacancies')
+    }
+  })
+
+  // GET /api/v1/vacancies/:id
+router.get('/vacancies/:id', async (req, res) => {
+    const id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.status(400).send('Bad Request: Id must be a number')
+      return
+    }
+  
+    try {
+      const vacancy = await getVacancyById(id)
+      if (!vacancy) {
+        res.sendStatus(404)
+        return
+      }
+      res.json(vacancy)
     } catch (err) {
       console.log(err)
       res.status(500).send('Could not get vacancy')

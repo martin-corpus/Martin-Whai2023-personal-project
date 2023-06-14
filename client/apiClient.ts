@@ -48,4 +48,11 @@ export async function getVacancciesByCompanyId(companyId: number): Promise<Vacan
     const response = await request.get(`/api/v1/vacancies/${companyId}`)
     console.log(response.body)
     return response.body
+}
+
+// GET /api/v1/vacancies/:id
+export async function getVacancyById(id: number): Promise<Vacancies> {
+    const response = await request.get(`/api/v1/vacancies/${id}`)
+    console.log(response.body)
+    return response.body
   }

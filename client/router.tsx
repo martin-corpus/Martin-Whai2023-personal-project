@@ -1,6 +1,7 @@
 import UserName from './components/userName/userName'
 import UserNameSearch from './components/userNameSearch/userNameSearch'
 import CompanyPage from './components/companyPage/companyPage'
+import VacancyPage from './components/vacanciesPage/vacancyPage'
 
 import {
   createBrowserRouter,
@@ -15,6 +16,7 @@ export const routes = createRoutesFromElements(
     <Route path="/username" element={<UserName />} />
       <Route path="/username/search" element={<UserNameSearch />} />
     <Route path="/company" element={<CompanyPage />} />  
+    <Route path="/vacancies/:id" element={<VacancyPage />} /> 
     <Route path="/" element={<App />} />
   
     

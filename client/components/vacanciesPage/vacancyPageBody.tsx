@@ -5,7 +5,7 @@ import { Companies } from "../../../models/companies"
 import  HiUserName  from '../../components/hiUserName'
 import { useQuery } from '@tanstack/react-query'
 
-export default function CompanyPageBody() {
+export default function VacancyPageBody() {
     const [searchParams] = useSearchParams()
     const [company, setCompany] = useState<Companies | null>(null)
 
