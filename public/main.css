@@ -38,20 +38,52 @@ body {
   max-height: 100px;
 }
 
-#Logo:hover {
-  border: 2px solid rgb(54, 88, 236);
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: 45%;
 }
-
 .logoContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 #headerHome {
   margin: 0px;
   text-decoration: none;
+}
+
+.headerLogOut {
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.headerLogOut button {
+  border: 2px solid rgb(54, 88, 236);
+  color: rgb(54, 88, 236);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+#Logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  max-width: 100%;
+  max-height: 100px;
+}
+
+.logoContainer:hover {
+  border: 2px solid rgb(54, 88, 236);
 }
 
 
@@ -103,8 +135,8 @@ body {
 }
 
 .circle {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background-color: #dbdbdb;
   display: flex;
@@ -114,56 +146,25 @@ body {
 }
 
 .loginIcon {
-  font-size: 80px;
+  font-size: 100px;
   color: rgb(39, 70, 209);
 }
 
-.loginEmail {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-.loginPassword {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 .loginButton {
-  width: 30%;
+  width: 40%;
   padding: 12px;
   background-color: rgb(54, 88, 236);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 10px;
-}
-
-.joinButton {
-  width: 100%;
-  padding: 12px;
-  background-color: rgb(54, 88, 236);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 20px;
+  margin-top: 15px;
+  font-size: 16px;
 }
 
 .loginButton:hover {
   background-color: rgb(19, 50, 179);
 }
-
-.joinButton:hover {
-  background-color: rgb(19, 50, 179);
-}
-
-
 
 /********************** FOOTER *******************/
 

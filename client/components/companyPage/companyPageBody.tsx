@@ -44,13 +44,18 @@ export default function CompanyPageBody() {
               {company.vacancies && (
                 <div className="vacancyContainer">
                   <div className="vacancyNotification">Vacancies Available</div>
+                  
                   {
                     vacanciesQuery.isError ?
                       <div>There was an error trying to get the vacancies</div>
                       : vacanciesQuery.isLoading ?
                         <div>Loading your vacancies</div>
                         :
-                        <div>Position: {vacanciesQuery.data.position}</div>
+                        <div>
+                          {vacanciesQuery.data.map((vacancy, index) => (
+                            <div key={index}>Position: {vacancy.position}</div>
+                          ))}
+                        </div>
                   }
                 </div>
               )}

@@ -2,9 +2,19 @@
 import imageUrl from '/images/name.png'
 import { FaUser, FaBuilding } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-
+import { useAuth0 } from '@auth0/auth0-react'
+import { IfNotAuthenticated } from './authenticated'
 
 export default function Body() {
+
+  const { loginWithRedirect } = useAuth0()
+
+
+  const handleSignIn = () => {
+    console.log('sign in')
+    loginWithRedirect()
+  }
+  
   return (
     <>
       <div className="name">
@@ -23,25 +33,10 @@ export default function Body() {
               </span>
             </div>
             
-            <form>
-              <div>
-                <input className="loginEmail" type="email" placeholder="User Email"/>
-              </div>
-              <div>
-                <input className="loginPassword" type="password" placeholder="User Password"/>
-              </div>
-              <div>
-                <Link to={'/username/'}>
-                  <button type="submit" className="loginButton">Login</button>
-                </Link>
-              </div>
-            </form>
+            <IfNotAuthenticated>
+              <button onClick={handleSignIn} className="loginButton">Sign in</button>
+            </IfNotAuthenticated>  
 
-            <div>
-              <Link to={'/newuser/'}>
-                <button type="submit" className="joinButton">Join</button>
-              </Link>  
-            </div>
           </div>
 
       {/* COMPANY */}
@@ -51,22 +46,11 @@ export default function Body() {
                 <FaBuilding />
               </span>  
             </div>
-            
-            <form>
-              <div>
-                <input className="loginEmail" type="email" placeholder="Company Email"/>
-              </div>
-              <div>
-                <input className="loginPassword" type="password" placeholder="Company Password"/>
-              </div>
-              <div>
-                <button type="submit" className="loginButton">Login</button>
-              </div>
-            </form>
 
-            <div>
-              <button type="submit" className="joinButton">Join</button>
-            </div>
+            <IfNotAuthenticated>
+              <button onClick={handleSignIn} className="loginButton">Stretch</button>
+            </IfNotAuthenticated>
+
           </div>
       </div>
     </>
