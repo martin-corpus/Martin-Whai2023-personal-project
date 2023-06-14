@@ -50,9 +50,9 @@ export async function getVacancciesByCompanyId(companyId: number): Promise<Vacan
     return response.body
 }
 
-// GET /api/v1/vacancies/:id
+// GET /api/v1/vacancy/:id
 export async function getVacancyById(id: number): Promise<Vacancies> {
-    const response = await request.get(`/api/v1/vacancies/${id}`)
+    const response = await request.get(`/api/v1/vacancy/${id}`)
     console.log(response.body)
     return response.body
   }

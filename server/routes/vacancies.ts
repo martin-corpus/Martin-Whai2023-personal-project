@@ -26,8 +26,8 @@ router.get('/vacancies/:companyId', async (req, res) => {
     }
   })
 
-  // GET /api/v1/vacancies/:id
-router.get('/vacancies/:id', async (req, res) => {
+  // GET /api/v1/vacancy/:id
+router.get('/vacancy/:id', async (req, res) => {
     const id = Number(req.params.id)
     if (isNaN(id)) {
       res.status(400).send('Bad Request: Id must be a number')
@@ -40,6 +40,7 @@ router.get('/vacancies/:id', async (req, res) => {
         res.sendStatus(404)
         return
       }
+      console.log(`Fetched vacancy by (${id}):`, vacancy)
       res.json(vacancy)
     } catch (err) {
       console.log(err)

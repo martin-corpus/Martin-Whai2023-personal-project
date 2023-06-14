@@ -6,5 +6,7 @@ export async function getVacanciesByCompanyId(companyId: number, db = connection
   }
 
   export async function getVacancyById(id: number, db = connection): Promise<Vacancies> {
-    return db('vacancies').where({ id }).first()
+    const vacancy = await db('vacancies').where({ id }).first()
+    console.log(vacancy)
+    return vacancy
   }
