@@ -26,6 +26,7 @@
 .companyLabelContainer p:last-child {
     margin: 0;
     font-size: 20px;
+    width: 70%;
 }
 
 .soloCompanyImage {
@@ -35,6 +36,9 @@
     height: 207px;
     border: 2px solid rgb(39, 70, 209);
   }
+
+
+/* /////// VACANCY */
 
 .vacancyContainer {
     position: fixed;

@@ -45,4 +45,6 @@ router.get('/company/:name', async (req, res) => {
   }
 })
 
+
+
 export default router

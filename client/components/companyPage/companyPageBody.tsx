@@ -67,7 +67,7 @@ export default function CompanyPageBody() {
               <div className="companyDescriptionContainer">
                 <img src={company.image} alt='company logo' className='soloCompanyImage'/>
                 <div className="companyLabelContainer">
-                  <p><span className="label">Name</span></p>
+                  <p><span className="label">Company Name</span></p>
                   <p>{company.name}</p>
                 </div>
                 <div className="companyLabelContainer">
