@@ -1,16 +1,33 @@
 
 import imageUrl from '/images/whistle.png'
+import { IfAuthenticated } from './authenticated'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function Header2() {
+
+  const { user, logout } = useAuth0()
+
+  
+  const handleSignOut = () => {
+    console.log('sign out')
+    logout()
+  }
+
   return (
     <>
-    
-      <a href="/" id="Logo">
+    <div className="headerContainer">
+      <a href="/username" id="Logo">
         <div className="logoContainer">
             <img src={imageUrl} alt="Logo" id="logo"/>
             <span id="headerHome">Home</span>
         </div>
       </a>
+      <div className="headerLogOut">  
+        <IfAuthenticated>
+          <button onClick={handleSignOut}>Sign out</button>
+        </IfAuthenticated>
+      </div>  
+    </div>  
     </>
   )
 }

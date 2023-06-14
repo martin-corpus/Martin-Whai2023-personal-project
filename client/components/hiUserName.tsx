@@ -1,8 +1,10 @@
-
+import { useAuth0 } from '@auth0/auth0-react'
 const image='/images/users/john_doe.jpg'
-const userName='Martin' 
+
 
 function HiUserName() {
+  const { user } = useAuth0()
+
     return (
       <>
         <div className="userContainer">
@@ -12,7 +14,7 @@ function HiUserName() {
                 </span>
             </div>
             <div>
-                <h1 id="userName">Hi {userName}</h1>
+              {user && <h1 id="userName">Hi {user?.nickname}</h1>}
             </div>
           </div>
       </>  
@@ -20,3 +22,4 @@ function HiUserName() {
   }
   
   export default HiUserName
+

@@ -6,6 +6,7 @@ import { Companies } from "../../../models/companies"
 import { getCompaniesByLocation, getCompaniesByField } from "../../apiClient"
 import  HiUserName  from '../../components/hiUserName'
 
+
 export default function UserNameSearchBody() {
 
   const [locationCompanies, setLocationCompanies] = useState([] as Companies[])
