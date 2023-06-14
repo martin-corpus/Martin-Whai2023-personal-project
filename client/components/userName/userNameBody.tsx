@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { FaUser } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import  HiUserName  from '../../components/hiUserName'
 
