@@ -141,7 +141,7 @@ return (
                 </div>
                 </div>
                 <div className="submitContainer">
-                    <Link to={`/username/search?location=${location}&field=${field}`}>
+                    <Link to={`/home/search?location=${location}&field=${field}`}>
                         <button type="submit" className="searchSubmit">Submit</button>
                     </Link>
                 </div>

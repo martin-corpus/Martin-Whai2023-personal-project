@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <Auth0Provider
       domain="whai-2023-martin.au.auth0.com"
       clientId="XqYaClLTl05P4ckDxYr2TySvbnMT5Tt1"
-      redirectUri={window.location.origin + '/username/'}
+      redirectUri={window.location.origin + '/home/'}
       audience="https://project/api "
     >
       <QueryClientProvider client={queryClient}>
