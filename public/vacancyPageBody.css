@@ -1,12 +1,14 @@
-
+.vacancyPageContainer {
+    height: calc(100vh - 300px);
+    overflow-y: auto;
+}
+  
   
 .vacancyDescriptionConatiner {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 200px;
-    
 }
 
 .vacancyLabelContainer {
@@ -16,6 +18,22 @@
     margin-bottom: 10px;
 }
 
+.soloCompanyImage {
+    display: block;
+    margin: 0 auto;
+    width: 260px;
+    height: 207px;
+    border: 2px solid rgb(39, 70, 209);
+}
+
+.vacancyCompanyLabel {
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+    color: rgb(39, 70, 209);
+    font-size: 25px;
+}
+
 .vacancylabel {
     font-weight: bold;
     color: rgb(39, 70, 209);
@@ -23,13 +41,30 @@
     text-decoration: underline;
 }
 
+.vacancyLabelContainer p:last-child,
 .vacancyLabelContainer p:first-child {
-    margin: 0;
-}
-
-.vacancyLabelContainer p:last-child {
     margin: 0;
     font-size: 20px;
     white-space: pre-wrap;
     width: 70%;
+    margin-bottom: 12px;
+}
+
+
+.vacancySubmitContainer {
+    display: flex;
+    justify-content: center;
+    width: 30%; 
+    margin: 10px auto; 
+}
+
+.vacancySubmitButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(39, 70, 209);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

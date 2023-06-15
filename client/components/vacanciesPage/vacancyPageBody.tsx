@@ -40,24 +40,19 @@ export default function VacancyPageBody() {
       const company = companyQuery.data
 
       return (
-        <>
+        <div className="vacancyPageContainer">
           <HiUserName />
 
               <div className="vacancyDescriptionContainer">
 
-                {company.image && (
+                {company.image && company.name && (
                   <div className="vacancyLabelContainer">
-                    
                     <img src={company.image} alt="company logo" className="soloCompanyImage" />
+                    <p><span className="vacancyCompanyLabel">{company.name}</span></p>
+                    <p></p>
                   </div>
                 )}
 
-                {company.name && (
-                  <div className="vacancyLabelContainer">
-                    <p><span className="label">{company.name}</span></p>
-                    <p>{company.name}</p>
-                  </div>
-                )}
 
                 <div className="vacancyLabelContainer">
                   <p><span className="vacancylabel">Position</span></p>
@@ -73,16 +68,19 @@ export default function VacancyPageBody() {
                 </div>
                 <div className="vacancyLabelContainer">
                   <p><span className="vacancylabel">Requirements</span></p>
-                  <pre>{vacancy.requirements}</pre>
+                  <p>{vacancy.requirements}</p>
                 </div>
                 <div className="vacancyLabelContainer">
                   <p><span className="vacancylabel">Deadline</span></p>
                   <p>{vacancy.deadline}</p>
                 </div>
                 
+                <div className="vacancySubmitContainer">
+                  <button type="submit" className="vacancySubmitButton">Apply</button>
+                </div>
+
               </div>
-            
-        </>
+        </div>
   )
 }
   

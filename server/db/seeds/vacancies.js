@@ -12,7 +12,6 @@ exports.seed = (knex) => {
             salary: '$70,000 - $90,000 per year',
             jobDescription: 'ByteMasters Development is seeking a skilled Software Engineer to join our team. In this role, you will be responsible for developing high-quality software products, collaborating with clients to understand their requirements, and implementing efficient coding practices. We value creativity, technical proficiency, and a strong focus on delivering exceptional results.',
             requirements: `The ideal candidate should have the following qualifications and skills:\n
-  
             - Bachelor's degree in Computer Science or related field\n
             - Proficiency in at least one programming language (e.g., Java, Python, C++)\n
             - Experience with software development methodologies and tools\n
