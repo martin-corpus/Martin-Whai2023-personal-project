@@ -92,19 +92,48 @@ export default function VacancyPageBody() {
                   </div>
                 )}
 
-                {showInputs && user && (
-                  <div className="vacancyInputsContainer">
-                  <input type="text" placeholder="Vacancy #" value={vacancy.id} readOnly />
-                  <input type="text" placeholder="Name" value={user.nickname} readOnly />
-                  <input type="email" placeholder="Email" value={user.email} readOnly />
-                  <input type="hidden" value={company.name} readOnly />
-                  <input type="hidden" value={company.image} readOnly />
-                  <input type="file" placeholder="Upload Cover Letter" />
-                  <input type="file" placeholder="Upload CV" />
-                  <button type="submit" className="vacancySubmitButton">
-                    Submit Application
-                  </button>
-                </div>
+                  {showInputs && user && (
+                    <div className="vacancyInputsContainer">
+                    <div className="inputContainer">
+                      <label htmlFor="vacancyNumber">Vacancy #:</label>
+                      <input type="text" id="vacancyNumber" placeholder="Vacancy #" value={vacancy.id} readOnly />
+                    </div>
+                    
+                    <div className="inputContainer">
+                      <label htmlFor="name">Name:</label>
+                        <input type="text" id="name" placeholder="Name" value={user.nickname} readOnly />
+                    </div>
+                  
+                    <div className="inputContainer">
+                      <label htmlFor="email">Email:</label>
+                        <input type="email" id="email" placeholder="Email" value={user.email} readOnly />
+                    </div>
+                    
+                    <div className="inputContainer">
+                      
+                        <input type="hidden" id="company" value={company.name} readOnly />
+                    </div>
+                    
+                    <div className="inputContainer">
+                      
+                        <input type="hidden" id="companyImage" value={company.image} readOnly />
+                    </div>
+                    
+                    <div className="inputContainer">
+                      <label htmlFor="coverLetter">Cover Letter:</label>
+                        <input type="file" id="coverLetter" placeholder="Upload Cover Letter" required/>
+                    </div>
+                    
+                    <div className="inputContainer">
+                      <label htmlFor="cv">CV:</label>
+                        <input type="file" id="cv" placeholder="Upload CV" required/>
+                    </div>
+                    
+                    <button type="submit" className="vacancySubmitButton">
+                      Submit Application
+                    </button>
+                  </div>    
+                
                 )}
 
               </div>
