@@ -44,10 +44,14 @@ export async function addNewUser(newUser: NewUser): Promise<Users> {
 /////// VACANCIES
 
 // GET /api/v1/vacancies/:companyId
-export async function getVacancciesByCompanyId(companyId: number): Promise<Vacancies[]> {
-    const response = await request.get(`/api/v1/vacancies/${companyId}`)
-    console.log(response.body)
-    return response.body
+export async function getVacanciesByCompanyId(companyId: number): Promise<Vacancies[]> {
+    if (isNaN(companyId)) {
+        return []
+    } else {
+        const response = await request.get(`/api/v1/vacancies/${companyId}`)
+        console.log(response.body)
+        return response.body
+    }
 }
 
 // GET /api/v1/vacancy/:id

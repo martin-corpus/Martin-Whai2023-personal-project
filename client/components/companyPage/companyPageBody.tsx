@@ -1,6 +1,6 @@
 import { Link, useSearchParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { getCompanyByName, getVacancciesByCompanyId } from "../../apiClient"
+import { getCompanyByName, getVacanciesByCompanyId } from "../../apiClient"
 import { Companies } from "../../../models/companies"
 import  HiUserName  from '../../components/hiUserName'
 import { useQuery } from '@tanstack/react-query'
@@ -28,27 +28,27 @@ export default function CompanyPageBody() {
 
       // REACT QUERY FOR VACANCIES
 
-      const companyId = Number(company?.id)
+      const companyId = Number(company?.id) // companyId = NaN
 
-      const vacanciesQuery = useQuery(['vacancies', companyId], () => getVacancciesByCompanyId(companyId))
+      const vacanciesQuery = useQuery(['vacancies', companyId], () => getVacanciesByCompanyId(companyId))
 
       console.log(vacanciesQuery.data)
       console.log(vacanciesQuery.error)
 
-      
       return (
         <>
           <HiUserName />
 
-          {company && company.vacancies && (
+          {!!company?.vacancies && (
             <div className="vacancyContainer">
               <div className="vacancyNotification">Vacancies Available</div>
               
-              {vacanciesQuery.isError ? (
-                <div>There was an error trying to get the vacancies</div>
-              ) : vacanciesQuery.isLoading ? (
-                <div>Loading your vacancies</div>
-              ) : (
+              {vacanciesQuery.isError && <div>There was an error trying to get the vacancies</div>}
+
+              {vacanciesQuery.isLoading && <div>Loading your vacancies</div>}
+
+              {
+                vacanciesQuery.data && (
                 <div className="vacanciesList">
                   {vacanciesQuery.data.map((vacancy, index) => (
                     <Link to={`/vacancies/${vacancy.id}`} key={index} className="vacancyItem">
