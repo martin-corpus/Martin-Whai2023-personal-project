@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import request from 'superagent'
 import { Companies } from "../models/companies"
-import { NewUser, User } from "../models/users"
+import { NewUser, Users } from "../models/users"
 import { Vacancies } from "../models/vacancies"
 
 
@@ -35,7 +35,7 @@ export async function getCompanyByName(name: string): Promise<Companies> {
 ///// NEW USERS
 const newUserUrl = '/api/v1/newUser'
 
-export async function addNewUser(newUser: NewUser): Promise<User> {
+export async function addNewUser(newUser: NewUser): Promise<Users> {
     const response = await request.post(newUserUrl).send( newUser )
     console.log(response.body)
     return response.body.user
@@ -63,3 +63,4 @@ export async function getCompanyById(id: number): Promise<Companies> {
     console.log(response.body)
     return response.body
   }
+

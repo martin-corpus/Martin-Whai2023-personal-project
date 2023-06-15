@@ -35,55 +35,53 @@ export default function CompanyPageBody() {
       console.log(vacanciesQuery.data)
       console.log(vacanciesQuery.error)
 
+      
       return (
         <>
           <HiUserName />
 
-          {company && (
-            <>
-              {company.vacancies && (
-                <div className="vacancyContainer">
-                  <div className="vacancyNotification">Vacancies Available</div>
-                  
-                  {
-                    vacanciesQuery.isError ?
-                      <div>There was an error trying to get the vacancies</div>
-                      : vacanciesQuery.isLoading ?
-                        <div>Loading your vacancies</div>
-                        :
-                        <div className="vacanciesList">
-                          {vacanciesQuery.data.map((vacancy, index) => (
-                            <Link to={`/vacancies/${vacancy.id}`} key={index} className="vacancyItem">
-                              <div key={index} className="vacancyItemContent">
-                                <strong>Position - </strong> {vacancy.position}
-                              </div>
-                            </Link>  
-                          ))}
-                        </div>
-                  }
+          {company && company.vacancies && (
+            <div className="vacancyContainer">
+              <div className="vacancyNotification">Vacancies Available</div>
+              
+              {vacanciesQuery.isError ? (
+                <div>There was an error trying to get the vacancies</div>
+              ) : vacanciesQuery.isLoading ? (
+                <div>Loading your vacancies</div>
+              ) : (
+                <div className="vacanciesList">
+                  {vacanciesQuery.data.map((vacancy, index) => (
+                    <Link to={`/vacancies/${vacancy.id}`} key={index} className="vacancyItem">
+                      <div className="vacancyItemContent">
+                        <strong>Position - </strong> {vacancy.position}
+                      </div>
+                    </Link>  
+                  ))}
                 </div>
               )}
+            </div>
+          )}
 
-              <div className="companyDescriptionContainer">
-                <img src={company.image} alt='company logo' className='soloCompanyImage'/>
-                <div className="companyLabelContainer">
-                  <p><span className="label">Company Name</span></p>
-                  <p>{company.name}</p>
-                </div>
-                <div className="companyLabelContainer">
-                  <p><span className="label">Location</span></p>
-                  <p>{company.location}</p>
-                </div>
-                <div className="companyLabelContainer">
-                  <p><span className="label">Field</span></p>
-                  <p>{company.field}</p>
-                </div>
-                <div className="companyLabelContainer">
-                  <p><span className="label">Description</span></p>
-                  <p>{company.description}</p>
-                </div>
+          {company && (
+            <div className="companyDescriptionContainer">
+              <img src={company.image} alt='company logo' className='soloCompanyImage'/>
+              <div className="companyLabelContainer">
+                <p><span className="label">Company Name</span></p>
+                <p>{company.name}</p>
               </div>
-            </>
+              <div className="companyLabelContainer">
+                <p><span className="label">Location</span></p>
+                <p>{company.location}</p>
+              </div>
+              <div className="companyLabelContainer">
+                <p><span className="label">Field</span></p>
+                <p>{company.field}</p>
+              </div>
+              <div className="companyLabelContainer">
+                <p><span className="label">Description</span></p>
+                <p>{company.description}</p>
+              </div>
+            </div>
           )}
         </>
   )
