@@ -16,7 +16,7 @@ export const routes = createRoutesFromElements(
     <Route path="/username" element={<UserName />} />
       <Route path="/username/search" element={<UserNameSearch />} />
     <Route path="/company" element={<CompanyPage />} />  
-    <Route path="/vacancies/:id" element={<VacancyPage />} /> 
+    <Route path="/vacancies/:id" element={<VacancyPage />} />
     <Route path="/" element={<App />} />
   
     

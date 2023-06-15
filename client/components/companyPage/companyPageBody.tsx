@@ -36,7 +36,7 @@ export default function CompanyPageBody() {
       console.log(vacanciesQuery.error)
 
       return (
-        <>
+        <div className="companyPageContainer">
           <HiUserName />
 
           {!!company?.vacancies && (
@@ -64,7 +64,9 @@ export default function CompanyPageBody() {
 
           {company && (
             <div className="companyDescriptionContainer">
-              <img src={company.image} alt='company logo' className='soloCompanyImage'/>
+              <div className="soloCompanyImageContainer">
+                <img src={company.image} alt='company logo' className='soloCompanyImage'/>
+              </div>  
               <div className="companyLabelContainer">
                 <p><span className="label">Company Name</span></p>
                 <p>{company.name}</p>
@@ -83,7 +85,7 @@ export default function CompanyPageBody() {
               </div>
             </div>
           )}
-        </>
+        </div>
   )
 }
   

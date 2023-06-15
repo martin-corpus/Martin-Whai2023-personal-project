@@ -1,11 +1,12 @@
 import { Link, useParams } from 'react-router-dom'
-
 import { getVacancyById, getCompanyById } from "../../apiClient"
-
 import  HiUserName  from '../../components/hiUserName'
 import { useQuery } from '@tanstack/react-query'
+import { useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function VacancyPageBody() {
+    const { user } = useAuth0()
     const { id } = useParams()
     const vacancyId = Number(id)
 
@@ -24,6 +25,14 @@ export default function VacancyPageBody() {
       console.log(vacancyQuery.error)
       console.log(companyQuery.data)
       console.log(companyQuery.error)
+
+      const [showInputs, setShowInputs] = useState(false)
+
+      const handleApplyButtonClick = () => {
+        setShowInputs(true)
+      }
+
+
 
       if (vacancyQuery.error || companyQuery.error) {
         return <div>There was an error trying to fetch the data</div>
@@ -75,9 +84,28 @@ export default function VacancyPageBody() {
                   <p>{vacancy.deadline}</p>
                 </div>
                 
-                <div className="vacancySubmitContainer">
-                  <button type="submit" className="vacancySubmitButton">Apply</button>
+                {!showInputs && (
+                  <div className="vacancySubmitContainer">
+                    <button type="submit" className="vacancySubmitButton" onClick={handleApplyButtonClick}>
+                      Apply
+                    </button>
+                  </div>
+                )}
+
+                {showInputs && user && (
+                  <div className="vacancyInputsContainer">
+                  <input type="text" placeholder="Vacancy #" value={vacancy.id} readOnly />
+                  <input type="text" placeholder="Name" value={user.nickname} readOnly />
+                  <input type="email" placeholder="Email" value={user.email} readOnly />
+                  <input type="hidden" value={company.name} readOnly />
+                  <input type="hidden" value={company.image} readOnly />
+                  <input type="file" placeholder="Upload Cover Letter" />
+                  <input type="file" placeholder="Upload CV" />
+                  <button type="submit" className="vacancySubmitButton">
+                    Submit Application
+                  </button>
                 </div>
+                )}
 
               </div>
         </div>

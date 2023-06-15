@@ -61,10 +61,26 @@
 .vacancySubmitButton {
     margin-top: 10px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 18px;
     background-color: rgb(39, 70, 209);
-    color: #fff;
+    color: #fff !important;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none; 
+}
+
+/* //////////// APPLICATION */
+
+.vacancySubmitContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.vacancyInputsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
