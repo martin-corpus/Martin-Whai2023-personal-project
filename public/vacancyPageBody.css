@@ -64,10 +64,10 @@
     font-size: 18px;
     background-color: rgb(39, 70, 209);
     color: #fff !important;
+    text-decoration: none; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none; 
 }
 
 /* //////////// APPLICATION */
@@ -101,4 +101,14 @@
     font-size: 16px;
     font-weight: bold;
     padding: 5px;
+  }
+
+  .applicationSubmitted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 50px;
+    font-weight: bold;
+    color: blue;
   }

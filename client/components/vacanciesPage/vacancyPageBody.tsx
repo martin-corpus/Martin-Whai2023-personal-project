@@ -14,6 +14,7 @@ export default function VacancyPageBody() {
     
     const [showInputs, setShowInputs] = useState(false)
     const [form, setForm] = useState<NewApplication | undefined>(undefined)
+    const [isApplicationSubmitted, setIsApplicationSubmitted] = useState(false)
 
     const queryClient = useQueryClient()
     const addApplicationMutation = useMutation(addApplication, {
@@ -55,6 +56,8 @@ export default function VacancyPageBody() {
 
     const handleApplyButtonClick = () => {
       setShowInputs(true)
+      
+      
     }
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -74,7 +77,11 @@ export default function VacancyPageBody() {
           cv: null,
         }
         setForm(initialFormData)
+        setIsApplicationSubmitted(true)
       }
+      setTimeout(() => {
+        setIsApplicationSubmitted(false)
+      }, 3000)
     }
     console.log(form)
 
@@ -216,6 +223,9 @@ export default function VacancyPageBody() {
                     <button type="submit" className="vacancySubmitButton">
                       Submit Application
                     </button>
+
+                    {isApplicationSubmitted && <p className="applicationSubmitted">Application submitted!</p>}
+
                   </div>    
                 )}
               </form>

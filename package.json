@@ -36,6 +36,7 @@
     "@testing-library/react": "^14.0.0",
     "@types/express": "^4.17.17",
     "@types/express-serve-static-core": "^4.17.35",
+    "@types/jquery": "^3.5.16",
     "@types/knex": "^0.16.1",
     "@types/node": "^18.16.16",
     "@types/react": "^18.0.23",

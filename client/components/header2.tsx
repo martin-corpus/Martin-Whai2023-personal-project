@@ -16,7 +16,7 @@ export default function Header2() {
   return (
     <>
     <div className="headerContainer">
-      <a href="/username" id="Logo">
+      <a href="/home" id="Logo">
         <div className="logoContainer">
             <img src={imageUrl} alt="Logo" id="logo"/>
             <span id="headerHome">Home</span>
