@@ -12,10 +12,10 @@ export default function VacancyPageBody() {
     const vacancyId = Number(id)
 
     const initialFormData = {
-      vacancyId: vacancy.id,
+      vacancyId: null,
       name: user?.nickname,
       email: user?.email,
-      companyName: company.name,
+      companyName: null,
       coverLetter: null,
       cv: null,
     }
@@ -40,11 +40,11 @@ export default function VacancyPageBody() {
       }
     })
 
-    console.log(vacancyQuery.data)
-    console.log(companyId)
-    console.log(vacancyQuery.error)
-    console.log(companyQuery.data)
-    console.log(companyQuery.error)
+    console.log('vacancy data:', vacancyQuery.data) 
+    console.log('company id:', companyId)
+    console.log('vacancy error:',vacancyQuery.error)
+    console.log('company data:', companyQuery.data)
+    console.log('company error:', companyQuery.error)
 
     const handleApplyButtonClick = () => {
       setShowInputs(true)
@@ -52,6 +52,7 @@ export default function VacancyPageBody() {
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
       event.preventDefault()
+      console.log(form)
       addApplicationMutation.mutate(form)
       setForm(initialFormData)
     }
