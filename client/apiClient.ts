@@ -3,6 +3,7 @@ import request from 'superagent'
 import { Companies } from "../models/companies"
 import { NewUser, Users } from "../models/users"
 import { Vacancies } from "../models/vacancies"
+import { NewApplication } from "../models/applications"
 
 
 
@@ -68,3 +69,11 @@ export async function getCompanyById(id: number): Promise<Companies> {
     return response.body
   }
 
+
+////// POST /api/v1/vacancy/:id
+
+export async function addApplication(application: NewApplication): Promise<void> {
+    await request
+        .post(`/api/v1/vacancy/${application.vacancyId}`)
+        .send(application)
+  }
