@@ -14,6 +14,6 @@ export interface Applications {
     email: string
     companyName: string
     companyImage: string
-    coverLetter: Buffer
-    cv: Buffer
+    coverLetter: Buffer | null
+    cv: Buffer | null
   }

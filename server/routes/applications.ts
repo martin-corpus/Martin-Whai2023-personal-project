@@ -14,6 +14,7 @@ router.post('/vacancy/:id', async (req, res) => {
   
     try {
       const applicationData = req.body
+      console.log(applicationData.coverLetter)
       const application = await addApplication( applicationData)
       res.status(200).json({ application })
     } catch (err) {

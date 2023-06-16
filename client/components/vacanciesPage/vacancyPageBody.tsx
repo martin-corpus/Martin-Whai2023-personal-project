@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { getVacancyById, getCompanyById, addApplication } from "../../apiClient"
 import  HiUserName  from '../../components/hiUserName'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { useState, ChangeEvent, FormEvent } from 'react'
+import { useState, ChangeEvent, FormEvent, useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { NewApplication } from '../../../models/applications'
 
@@ -11,18 +11,9 @@ export default function VacancyPageBody() {
     const { id } = useParams()
     const vacancyId = Number(id)
 
-    const initialFormData = {
-      vacancyId: null,  //vacancy.id
-      name: user?.nickname,
-      email: user?.email,
-      companyName: null, //company.name
-      companyImage: null, //company.image
-      coverLetter: null,
-      cv: null,
-    }
-
+    
     const [showInputs, setShowInputs] = useState(false)
-    const [form, setForm] = useState<NewApplication>(initialFormData)
+    const [form, setForm] = useState<NewApplication | undefined>(undefined)
 
     const queryClient = useQueryClient()
     const addApplicationMutation = useMutation(addApplication, {
@@ -41,6 +32,21 @@ export default function VacancyPageBody() {
       }
     })
 
+    useEffect (() => {
+        if (!!form != undefined && !!vacancyQuery.data && !!companyQuery.data && !!user) {
+          const initialFormData: NewApplication = {
+            vacancyId: vacancyQuery.data.id,  //vacancy.id
+            name: user?.nickname ? user.nickname : '',
+            email: user?.email ? user.email : '',
+            companyName: companyQuery.data.name, //company.name
+            companyImage: companyQuery.data.image, //company.image
+            coverLetter: null,
+            cv: null,
+          }
+          setForm(initialFormData)
+        }
+    }, [vacancyQuery.data, companyQuery.data, user])
+
     console.log('vacancy data:', vacancyQuery.data) 
     console.log('company id:', companyId)
     console.log('vacancy error:',vacancyQuery.error)
@@ -54,15 +60,31 @@ export default function VacancyPageBody() {
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
       event.preventDefault()
       console.log(form)
-      addApplicationMutation.mutate(form)
-      setForm(initialFormData)
+      if (form) {
+        addApplicationMutation.mutate(form)
+      }
+      if (form != undefined && vacancyQuery.data && companyQuery.data && user) {
+        const initialFormData: NewApplication = {
+          vacancyId: vacancyQuery.data.id,  //vacancy.id
+          name: user?.nickname ? user.nickname : '',
+          email: user?.email ? user.email : '',
+          companyName: companyQuery.data.name, //company.name
+          companyImage: companyQuery.data.image, //company.image
+          coverLetter: null,
+          cv: null,
+        }
+        setForm(initialFormData)
+      }
     }
+    console.log(form)
 
     function handleChange(event: ChangeEvent<HTMLInputElement>) {
       const { name, files } = event.target
       const file = files?.[0]
-      const newForm = { ...form, [name]: file }
-      setForm(newForm)
+      if(form) {
+        const newForm: NewApplication = { ...form, [name]: file }
+        setForm(newForm)
+      }
     }
 
     if (addApplicationMutation.isError) {
