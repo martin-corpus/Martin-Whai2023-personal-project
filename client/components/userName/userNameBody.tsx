@@ -68,7 +68,14 @@ export default function UserNameBody() {
       rightArrow.addEventListener('click', showNextBox)
     }
 
-    showCurrentBoxes()
+    if (applications.length > 0) {
+      showCurrentBoxes();
+    } else {
+      boxesArray.forEach((box: HTMLElement) => {
+        box.style.display = 'block';
+        box.innerText = 'No applications at the moment'
+      })
+    }
 
     return () => {
         if (leftArrow) {
