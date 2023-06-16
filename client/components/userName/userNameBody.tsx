@@ -1,15 +1,25 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import  HiUserName  from '../../components/hiUserName'
+import { useAuth0 } from '@auth0/auth0-react'
+import { Applications } from '../../../models/applications'
+import { useQuery } from '@tanstack/react-query'
+import { getApplicationsByEmail } from "../../apiClient"
 
 export default function UserNameBody() {
+
+  const { user } = useAuth0()
   
 //////////////// APPLICATIONS ///
 
-const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const email = user?.email || ''
+
+  const applicationsQuery = useQuery(['applications', email], () => getApplicationsByEmail (email))
+  const applications: Applications[] = Array.isArray(applicationsQuery.data) ? applicationsQuery.data : []
 
 
-useEffect(() => {
+  useEffect(() => {
     const applicationboxes = document.querySelectorAll('.applicationbox')
     const boxesArray = Array.from(applicationboxes) as HTMLElement[]
 
@@ -19,7 +29,16 @@ useEffect(() => {
     
         boxesArray.forEach((box: HTMLElement, index: number) => {
           if (index >= startIndex && index < endIndex) {
+            const applicationIndex = index - startIndex
             box.style.display = 'block'
+            
+            const imgElement = document.createElement('img')
+            imgElement.src = applications[applicationIndex]?.companyImage || ''
+            imgElement.alt = 'Company Logo'
+            imgElement.classList.add('applicationImage')
+
+            box.innerHTML = ''
+            box.appendChild(imgElement)
           } else {
             box.style.display = 'none'
           }
@@ -60,7 +79,7 @@ useEffect(() => {
           rightArrow.removeEventListener('click', showNextBox)
         }
       }
-    }, [currentIndex])
+    }, [currentIndex, applications])
   
 
 //////////////// SEARCH ENGINE ///

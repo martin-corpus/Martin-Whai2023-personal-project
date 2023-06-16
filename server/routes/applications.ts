@@ -1,5 +1,5 @@
 import express from 'express'
-import { addApplication } from '../db/dbapplications'
+import { addApplication, getApplicationsByEmail } from '../db/dbapplications'
 const router = express.Router()
 
 //server = /api/v1
@@ -23,6 +23,17 @@ router.post('/vacancy/:id', async (req, res) => {
     }
   })
 
-
+// GET /api/v1/applications/:email
+router.get('/applications/:email', async (req, res) => {
+  try {
+    const email = req.params.email
+    const application = await getApplicationsByEmail(email)
+    console.log(`Fetched application by email (${email}):`, application)
+    res.json({ application })
+  } catch (error) {
+    console.error('Error fetching application by email:', error)
+    res.status(500).json({ error: 'Internal server error' })
+  }
+})
 
 export default router

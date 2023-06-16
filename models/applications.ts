@@ -4,6 +4,7 @@ export interface Applications {
     name: string
     email: string
     companyName: string
+    companyImage: string
     coverLetter: Buffer
     cv: Buffer
   }

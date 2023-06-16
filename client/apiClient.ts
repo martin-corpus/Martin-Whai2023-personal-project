@@ -3,13 +3,14 @@ import request from 'superagent'
 import { Companies } from "../models/companies"
 import { NewUser, Users } from "../models/users"
 import { Vacancies } from "../models/vacancies"
-import { NewApplication } from "../models/applications"
+import { NewApplication, Applications } from "../models/applications"
 
 
 
 //// COMPANIES
 const companyUrl = '/api/v1/companies'
 const companyNameUrl = '/api/v1/company'
+const applicationsUrl = '/api/v1/applications'
 
 export async function getCompaniesByLocation(location: string): Promise<Companies[]> {
     console.log(`${companyUrl}/location/${location}`)
@@ -60,14 +61,14 @@ export async function getVacancyById(id: number): Promise<Vacancies> {
     const response = await request.get(`/api/v1/vacancy/${id}`)
     console.log(response.body)
     return response.body
-  }
+}
 
     // GET /api/v1/vacancy/company/:id
 export async function getCompanyById(id: number): Promise<Companies> {
     const response = await request.get(`/api/v1/vacancy/company/${id}`)
     console.table(response.body)
     return response.body
-  }
+}
 
 
 ////// POST /api/v1/vacancy/:id
@@ -76,4 +77,12 @@ export async function addApplication(application: NewApplication): Promise<void>
     await request
         .post(`/api/v1/vacancy/${application.vacancyId}`)
         .send(application)
-  }
+}
+
+// GET /api/v1/applications/:email
+
+export async function getApplicationsByEmail(email: string): Promise<Applications[]> {
+    const response = await request.get(`${applicationsUrl}/${email}`)
+    console.log('Applications Response:', response.body.application)
+    return response.body.application
+}
