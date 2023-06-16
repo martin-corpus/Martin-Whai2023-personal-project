@@ -17,7 +17,7 @@ export default function UserNameBody() {
 
   const applicationsQuery = useQuery(['applications', email], () => getApplicationsByEmail (email))
   const applications: Applications[] = Array.isArray(applicationsQuery.data) ? applicationsQuery.data : []
-
+  const showArrows = applications.length > 3
 
   useEffect(() => {
     const applicationboxes = document.querySelectorAll('.applicationbox')
@@ -53,7 +53,7 @@ export default function UserNameBody() {
       
       const showPreviousBox = () => {
         setCurrentIndex((prevIndex) =>
-          prevIndex > 0 ? prevIndex - 1 : Math.floor(boxesArray.length / 3)
+          prevIndex > 0 ? prevIndex - 1 : Math.floor(boxesArray.length - 1 / 3)
         )
       }
 
@@ -69,12 +69,7 @@ export default function UserNameBody() {
     }
 
     if (applications.length > 0) {
-      showCurrentBoxes();
-    } else {
-      boxesArray.forEach((box: HTMLElement) => {
-        box.style.display = 'block';
-        box.innerText = 'No applications at the moment'
-      })
+      showCurrentBoxes()
     }
 
     return () => {
@@ -117,21 +112,30 @@ return (
         <h3 id="applications">Applications</h3>
             <div className="userApplications">
                 
-                <div className="leftArrow">
+                {showArrows && (
+                  <div className="leftArrow">
                     <i className="fa-solid fa-chevron-left"></i>
-                </div>
+                  </div>
+                )}
 
-                <div className="applicationbox" id="box1">Application 1</div>
-                <div className="applicationbox" id="box2">Application 2</div>
-                <div className="applicationbox" id="box3">Application 3</div>
-                <div className="applicationbox" id="box4">Application 4</div>
-                <div className="applicationbox" id="box5">Application 5</div>
-                <div className="applicationbox" id="box6">Application 6</div>
-                <div className="applicationbox" id="box7">Application 7</div>
+                {applications.length > 0 ? (
+                  applications.map((_, index) => {
+                    if (index >= currentIndex * 3 && index < currentIndex * 3 + 3) {
+                      return <div className="applicationbox" key={index}></div>
+                    }
+                    return null
+                  })
+                ) : (
+                  <div className="applicationWarning">
+                    No applications at the moment
+                  </div>
+                )}
 
-                <div className="rightArrow">
+                {showArrows && (
+                  <div className="rightArrow">
                     <i className="fa-solid fa-chevron-right"></i>
-                </div>
+                  </div>
+                )}
             </div>
         </div>
 
