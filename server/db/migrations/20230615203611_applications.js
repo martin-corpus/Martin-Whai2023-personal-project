@@ -6,6 +6,7 @@ exports.up = (knex) => {
         table.string('name')
         table.string('email')
         table.string('companyName')
+        table.binary('companyImage')
         table.binary('coverLetter')
         table.binary('cv')
     })

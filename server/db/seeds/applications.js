@@ -10,6 +10,7 @@ exports.seed = (knex) => {
             name: '',
             email: '',
             companyName: '',
+            companyImage:'',
             coverLetter: '',
             cv: '',
           },

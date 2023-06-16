@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { getVacancyById, getCompanyById, addApplication } from "../../apiClient"
 import  HiUserName  from '../../components/hiUserName'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { NewApplication } from '../../../models/applications'
 
@@ -12,10 +12,11 @@ export default function VacancyPageBody() {
     const vacancyId = Number(id)
 
     const initialFormData = {
-      vacancyId: null,
+      vacancyId: null,  //vacancy.id
       name: user?.nickname,
       email: user?.email,
-      companyName: null,
+      companyName: null, //company.name
+      companyImage: null, //company.image
       coverLetter: null,
       cv: null,
     }
@@ -58,9 +59,9 @@ export default function VacancyPageBody() {
     }
 
     function handleChange(event: ChangeEvent<HTMLInputElement>) {
-      const { name, value, files } = event.target
-      const file = files?.[0];
-      const newForm = { ...form, [name]: file };
+      const { name, files } = event.target
+      const file = files?.[0]
+      const newForm = { ...form, [name]: file }
       setForm(newForm)
     }
 
