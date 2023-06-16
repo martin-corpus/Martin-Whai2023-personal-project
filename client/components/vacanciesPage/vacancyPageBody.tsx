@@ -78,14 +78,36 @@ export default function VacancyPageBody() {
     }
     console.log(form)
 
+    // function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    //   const { name, files } = event.target
+    //   const file = files?.[0]     //how to save a file in state
+    //   // FormData
+    //   // Saving formData into react state
+    //   if(form) {
+    //     const newForm: NewApplication = { ...form, [name]: file }
+    //     setForm(newForm)
+    //   }
+    // }
+
     function handleChange(event: ChangeEvent<HTMLInputElement>) {
       const { name, files } = event.target
-      const file = files?.[0]
-      if(form) {
-        const newForm: NewApplication = { ...form, [name]: file }
+    
+      if (files) {
+        const file = files[0]
+        const updatedFormData = new FormData()
+    
+        updatedFormData.append(name, file)
+    
+        const newForm: NewApplication = {
+          ...form,
+          [name]: file,
+          formData: updatedFormData,
+        }
+    
         setForm(newForm)
       }
     }
+
 
     if (addApplicationMutation.isError) {
       return <div>There was an error trying to add your application</div>
@@ -183,12 +205,12 @@ export default function VacancyPageBody() {
                     
                     <div className="inputContainer">
                       <label htmlFor="coverLetter">Cover Letter:</label>
-                        <input type="file" id="coverLetter" placeholder="Upload Cover Letter" required onChange={handleChange}/>
+                        <input type="file" id="coverLetter" name="coverLetter" placeholder="Upload Cover Letter" required onChange={handleChange}/>
                     </div>
                     
                     <div className="inputContainer">
                       <label htmlFor="cv">CV:</label>
-                        <input type="file" id="cv" placeholder="Upload CV" required onChange={handleChange}/>
+                        <input type="file" id="cv" name="cv" placeholder="Upload CV" required onChange={handleChange}/>
                     </div>
                     
                     <button type="submit" className="vacancySubmitButton">
