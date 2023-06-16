@@ -113,17 +113,14 @@ return (
             <div className="userApplications">
                 
                 {showArrows && (
-                  <div className="leftArrow">
+                  <div className="leftArrow" >
                     <i className="fa-solid fa-chevron-left"></i>
                   </div>
                 )}
 
                 {applications.length > 0 ? (
                   applications.map((_, index) => {
-                    if (index >= currentIndex * 3 && index < currentIndex * 3 + 3) {
                       return <div className="applicationbox" key={index}></div>
-                    }
-                    return null
                   })
                 ) : (
                   <div className="applicationWarning">

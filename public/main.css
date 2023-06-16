@@ -266,7 +266,8 @@ a:visited {
   flex-shrink: 0;
   width: 182px;
   height: 148px;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
   background-color: #ffffff;
   border: 2px solid rgb(39, 70, 209);
   display: flex;
