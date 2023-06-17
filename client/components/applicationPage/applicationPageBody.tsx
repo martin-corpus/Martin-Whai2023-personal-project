@@ -30,12 +30,18 @@ export default function ApplicationPageBody() {
           queryClient.invalidateQueries(['application', id])
 
           setIsApplicationDeleted(true)
-            setTimeout(() => {
-                setIsApplicationDeleted(false)
-                window.location.href = '/home'
-            }, 1000)
         },
       })
+
+    useEffect(() => {
+        if (isApplicationDeleted) {
+          setTimeout(() => {
+            setIsApplicationDeleted(false)
+            window.location.href = '/home'
+          }, 1000)
+        }
+      }, [isApplicationDeleted])
+    
 
     const handleDeleteClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
@@ -43,14 +49,6 @@ export default function ApplicationPageBody() {
         console.log('deleting', id)
     }
     
-    console.log('vacancy data:', vacancyQuery.data) 
-    console.log('company id:', companyId)
-    console.log('vacancy error:',vacancyQuery.error)
-    console.log('company data:', companyQuery.data)
-    console.log('company error:', companyQuery.error)
-    console.log('application data:', applicationQuery.data)
-    console.log('application error:', applicationQuery.error)
-
     if (vacancyQuery.error || companyQuery.error || applicationQuery.error) {
         return <div>There was an error trying to fetch the data</div>
       } 
