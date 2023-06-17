@@ -33,7 +33,7 @@ export default function UserNameBody() {
             box.style.display = 'block'
             
             const imgElement = document.createElement('img')
-            imgElement.src = applications[applicationIndex]?.companyImage || ''
+            imgElement.src = applications[applicationIndex + startIndex]?.companyImage || ''
             imgElement.alt = 'Company Logo'
             imgElement.classList.add('applicationImage')
 
@@ -47,13 +47,13 @@ export default function UserNameBody() {
 
       const showNextBox = () => {
         setCurrentIndex((prevIndex) =>
-          prevIndex < Math.floor(boxesArray.length / 3) ? prevIndex + 1 : 0
+        prevIndex < Math.floor((boxesArray.length - 1) / 3) ? prevIndex + 1 : 0
         )
       }
       
       const showPreviousBox = () => {
         setCurrentIndex((prevIndex) =>
-          prevIndex > 0 ? prevIndex - 1 : Math.floor(boxesArray.length - 1 / 3)
+        prevIndex > 0 ? prevIndex - 1 : Math.floor((boxesArray.length - 1) / 3)
         )
       }
 
@@ -119,8 +119,8 @@ return (
                 )}
 
                 {applications.length > 0 ? (
-                  applications.map((_, index) => {
-                      return <div className="applicationbox" key={index}></div>
+                  applications.map((application, index) => {
+                      return <Link to={`/home/applications/${application.vacancyId}`} key={application.id}><div className="applicationbox" key={index}></div></Link>
                   })
                 ) : (
                   <div className="applicationWarning">
