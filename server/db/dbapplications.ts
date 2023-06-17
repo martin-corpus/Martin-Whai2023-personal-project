@@ -23,3 +23,22 @@ export async function addApplication(application: NewApplication, db = connectio
         throw error
       })
   }
+
+  export function getApplicationsById(id: number, db = connection) {
+    return db<Applications>('applications')
+      .where('id', '=', id)
+      .first()
+      .then((applications) => {
+        console.log(`Application with id (${id}):`, applications)
+        return applications
+      })
+      .catch((error) => {
+        console.error('Error fetching application by id:', error)
+        throw error
+      })
+  }
+
+  export async function deleteApplicationById(id: number, db = connection): Promise<void> {
+    await db('applications').where({ id }).delete()
+  }
+  

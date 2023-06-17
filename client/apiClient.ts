@@ -86,3 +86,16 @@ export async function getApplicationsByEmail(email: string): Promise<Application
     console.log('Applications Response:', response.body.application)
     return response.body.application
 }
+
+// GET /api/v1/home/applications/:id
+export async function getApplicationsById(id: number): Promise<Applications> {
+    const response = await request.get(`/api/v1/home/applications/${id}`)
+    console.log(response.body)
+    return response.body
+}
+
+// DELETE /api/v1/home/applications/:id
+
+export async function deleteApplicationById(id: number): Promise<void> {
+    await request.delete(`/api/v1/home/applications/${id}`)
+  }

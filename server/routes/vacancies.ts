@@ -1,6 +1,6 @@
 import express from 'express'
-import { getVacanciesByCompanyId, getVacancyById } from '../db/dbvacancies'
-import { getCompanyById } from '../db/dbvacancies'
+import { getVacanciesByCompanyId, getVacancyById, getCompanyById } from '../db/dbvacancies'
+
 
 const router = express.Router()
 

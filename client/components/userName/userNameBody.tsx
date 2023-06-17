@@ -120,7 +120,7 @@ return (
 
                 {applications.length > 0 ? (
                   applications.map((application, index) => {
-                      return <Link to={`/home/applications/${application.vacancyId}`} key={application.id}><div className="applicationbox" key={index}></div></Link>
+                      return <Link to={`/home/applications/${application.id}`} key={application.id}><div className="applicationbox" key={index}></div></Link>
                   })
                 ) : (
                   <div className="applicationWarning">

@@ -1,16 +1,21 @@
 import { useParams } from 'react-router-dom'
-import { getVacancyById, getCompanyById, addApplication } from "../../apiClient"
+import { getVacancyById, getCompanyById, getApplicationsById, deleteApplicationById } from "../../apiClient"
 import  HiUserName  from '../../components/hiUserName'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
-import { NewApplication } from '../../../models/applications'
+
 
 export default function ApplicationPageBody() {
     const { id } = useParams()
-    const vacancyId = Number(id)
+    const applicationId = Number(id)
+    const queryClient = useQueryClient()
 
-    const vacancyQuery = useQuery(['vacancy', id], () => getVacancyById(vacancyId))
+    const [isApplicationDeleted, setIsApplicationDeleted] = useState(false)
+
+    const applicationQuery = useQuery(['application', id], () => getApplicationsById(applicationId))
+    const vacancyId = Number(applicationQuery.data?.vacancyId)
+
+    const vacancyQuery = useQuery(['vacancy', vacancyId], () => getVacancyById(vacancyId))
     const companyId = vacancyQuery.data?.companyId
     const companyQuery = useQuery(['company', companyId], () => {
       if (typeof companyId === 'number') {
@@ -20,20 +25,42 @@ export default function ApplicationPageBody() {
       }
     })
 
+    const deleteApplicationMutation = useMutation(() => deleteApplicationById(applicationId), {
+        onSuccess: async () => {
+          queryClient.invalidateQueries(['application', id])
+
+          setIsApplicationDeleted(true)
+            setTimeout(() => {
+                setIsApplicationDeleted(false)
+                window.location.href = '/home'
+            }, 1000)
+        },
+      })
+
+    const handleDeleteClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
+        deleteApplicationMutation.mutate()
+        console.log('deleting', id)
+    }
+    
     console.log('vacancy data:', vacancyQuery.data) 
     console.log('company id:', companyId)
     console.log('vacancy error:',vacancyQuery.error)
     console.log('company data:', companyQuery.data)
     console.log('company error:', companyQuery.error)
+    console.log('application data:', applicationQuery.data)
+    console.log('application error:', applicationQuery.error)
 
-    if (vacancyQuery.error || companyQuery.error) {
+    if (vacancyQuery.error || companyQuery.error || applicationQuery.error) {
         return <div>There was an error trying to fetch the data</div>
       } 
       
     if (vacancyQuery.isLoading ||
         companyQuery.isLoading ||
+        applicationQuery.isLoading ||
         !vacancyQuery.data ||
-        !companyQuery.data) {
+        !companyQuery.data ||
+        !applicationQuery.data) {
         return <div>Loading your vacancy</div>
     }
 
@@ -76,9 +103,11 @@ export default function ApplicationPageBody() {
                 </div>
                 
                 <div className="vacancySubmitContainer">
-                <button type="submit" className="vacancySubmitButton">
+                <button type="submit" className="vacancySubmitButton" onClick={handleDeleteClick}>
                       Delete Application
                 </button>
+
+                {isApplicationDeleted && <p className="applicationDeleted">Application Deleted!</p>}
                 </div>
 
               </div>
