@@ -47,9 +47,9 @@ export default function Body() {
               </span>  
             </div>
 
-            <IfNotAuthenticated>
-              <button onClick={handleSignIn} className="loginButton">Stretch</button>
-            </IfNotAuthenticated>
+            {/* <IfNotAuthenticated> onClick={handleSignIn} */}
+              <button className="loginButton">Under Construction</button>
+            {/* </IfNotAuthenticated> */}
 
           </div>
       </div>
