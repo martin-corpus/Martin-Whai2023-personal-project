@@ -17,6 +17,7 @@ server.use('/api/v1', applications)
 
 if (process.env.NODE_ENV === 'production') {
     server.use('/assets', express.static(resolve(__dirname, '../../assets')))
+    server.use('/images', express.static(resolve(__dirname, '../../images')))
     server.get('*', (req, res) => {
       res.sendFile(resolve(__dirname, '../../index.html'))
     })
