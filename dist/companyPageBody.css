@@ -1,0 +1,95 @@
+.companyPageContainer {
+    height: calc(100vh - 280px);
+    overflow-y: auto;
+}
+
+.companyDescriptionConatiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.companyLabelContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.label {
+    font-weight: bold;
+    color: rgb(39, 70, 209);
+    font-size: 25px;
+    text-decoration: underline;
+   
+}
+
+.companyLabelContainer p:first-child {
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.companyLabelContainer p:last-child {
+    margin: 0;
+    font-size: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 8px;
+}
+
+.soloCompanyImageContainer {
+    margin-bottom: 10px;
+}
+
+.soloCompanyImage {
+    display: block;
+    margin: 0 auto;
+    width: 260px;
+    height: 207px;
+    border: 2px solid rgb(39, 70, 209);
+  }
+
+
+/* /////// VACANCY */
+
+.vacancyContainer {
+    position: fixed;
+    top: 400px;
+    left: 10px;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vacancyNotification {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+  
+.vacanciesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+  
+.vacancyItem {
+    border: 2px solid rgb(39, 70, 209);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(39, 70, 209);
+    display: block;
+    background-color: #dbdbdb;;
+}
+  
+.vacancyItemContent {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
