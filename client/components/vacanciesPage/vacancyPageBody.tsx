@@ -11,12 +11,12 @@ import { Companies } from '../../../models/companies'
 export default function VacancyPageBody() {
   // TODO: change this back to a real user
   const { user } = useAuth0()
-  
+
   // User | undefined = {
   //   nickname: User.nickname,
   //   email: 'johndoe@email.com',
   // }
-  
+
   const { id } = useParams()
   const vacancyId = Number(id)
 
@@ -61,14 +61,14 @@ export default function VacancyPageBody() {
 }
 
 function VacancyPageContents({
-    company,
-    vacancy,
-    user,
-  }: {
-    company: Companies
-    vacancy: Vacancies
-    user: User
-  }) {
+  company,
+  vacancy,
+  user,
+}: {
+  company: Companies
+  vacancy: Vacancies
+  user: User
+}) {
   const emptyForm: NewApplication = {
     vacancyId: vacancy.id, //vacancy.id
     name: user?.nickname ? user.nickname : '',
@@ -99,7 +99,6 @@ function VacancyPageContents({
       setFormKey(formKey + 1)
     }, 2000)
   }
-
 
   if (addApplicationMutation.isError) {
     return <div>There was an error trying to add your application</div>

@@ -1,6 +1,5 @@
 import connection from './connection'
-import { Companies } from "../../models/companies"
-
+import { Companies } from '../../models/companies'
 
 export function getCompaniesByLocation(location: string, db = connection) {
   return db<Companies>('companies')
@@ -43,4 +42,3 @@ export function getCompanyByName(name: string, db = connection) {
       throw error
     })
 }
-

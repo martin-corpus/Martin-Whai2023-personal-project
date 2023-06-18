@@ -9,7 +9,6 @@ const queryClient = new QueryClient()
 
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('root') as HTMLElement).render(
-    
     <Auth0Provider
       domain="whai-2023-martin.au.auth0.com"
       clientId="XqYaClLTl05P4ckDxYr2TySvbnMT5Tt1"

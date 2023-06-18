@@ -1,9 +1,8 @@
 export interface Users {
-    id: number;
-    name: string;
-  }
+  id: number
+  name: string
+}
 
 export interface NewUser {
-    name: string;
+  name: string
 }
-  

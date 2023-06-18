@@ -14,6 +14,4 @@ server.use('/api/v1', vacancies)
 server.use('/api/v1', users)
 server.use('/api/v1', applications)
 
-
-
 export default server

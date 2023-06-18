@@ -1,6 +1,9 @@
 import express from 'express'
-import { getVacanciesByCompanyId, getVacancyById, getCompanyById } from '../db/dbvacancies'
-
+import {
+  getVacanciesByCompanyId,
+  getVacancyById,
+  getCompanyById,
+} from '../db/dbvacancies'
 
 const router = express.Router()
 
@@ -8,48 +11,48 @@ const router = express.Router()
 
 // GET /api/v1/vacancies/:companyId
 router.get('/vacancies/:companyId', async (req, res) => {
-    const companyId = Number(req.params.companyId)
-    if (isNaN(companyId)) {
-      res.status(400).send('Bad Request: companyId must be a number')
+  const companyId = Number(req.params.companyId)
+  if (isNaN(companyId)) {
+    res.status(400).send('Bad Request: companyId must be a number')
+    return
+  }
+
+  try {
+    const vacancies = await getVacanciesByCompanyId(companyId)
+    if (!vacancies) {
+      res.sendStatus(404)
       return
     }
-  
-    try {
-      const vacancies = await getVacanciesByCompanyId(companyId)
-      if (!vacancies) {
-        res.sendStatus(404)
-        return
-      }
-      res.json(vacancies)
-    } catch (err) {
-      console.log(err)
-      res.status(500).send('Could not get vacancies')
-    }
-  })
+    res.json(vacancies)
+  } catch (err) {
+    console.log(err)
+    res.status(500).send('Could not get vacancies')
+  }
+})
 
-  // GET /api/v1/vacancy/:id
+// GET /api/v1/vacancy/:id
 router.get('/vacancy/:id', async (req, res) => {
-    const id = Number(req.params.id)
-    if (isNaN(id)) {
-      res.status(400).send('Bad Request: Id must be a number')
+  const id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.status(400).send('Bad Request: Id must be a number')
+    return
+  }
+
+  try {
+    const vacancy = await getVacancyById(id)
+    if (!vacancy) {
+      res.sendStatus(404)
       return
     }
-  
-    try {
-      const vacancy = await getVacancyById(id)
-      if (!vacancy) {
-        res.sendStatus(404)
-        return
-      }
-      console.log(`Fetched vacancy by (${id}):`, vacancy)
-      res.json(vacancy)
-    } catch (err) {
-      console.log(err)
-      res.status(500).send('Could not get vacancy')
-    }
-  })
+    console.log(`Fetched vacancy by (${id}):`, vacancy)
+    res.json(vacancy)
+  } catch (err) {
+    console.log(err)
+    res.status(500).send('Could not get vacancy')
+  }
+})
 
-  // GET /api/v1/vacancy/company/:id
+// GET /api/v1/vacancy/company/:id
 router.get('/vacancy/company/:id', async (req, res) => {
   const id = Number(req.params.id)
   if (isNaN(id)) {
@@ -71,4 +74,4 @@ router.get('/vacancy/company/:id', async (req, res) => {
   }
 })
 
-  export default router
+export default router

@@ -1,5 +1,9 @@
 import express from 'express'
-import { getCompaniesByLocation, getCompaniesByField, getCompanyByName } from '../db/dbcompanies'
+import {
+  getCompaniesByLocation,
+  getCompaniesByField,
+  getCompanyByName,
+} from '../db/dbcompanies'
 // import { Companies } from "../../models/companies"
 const router = express.Router()
 
@@ -44,7 +48,5 @@ router.get('/company/:name', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' })
   }
 })
-
-
 
 export default router

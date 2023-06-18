@@ -15,13 +15,11 @@ import App from './components/App'
 export const routes = createRoutesFromElements(
   <Route path="/">
     <Route path="/home" element={<UserName />} />
-      <Route path="/home/search" element={<UserNameSearch />} />
-      <Route path="/home/applications/:id" element={<ApplicationPage />} />
-    <Route path="/company" element={<CompanyPage />} />  
+    <Route path="/home/search" element={<UserNameSearch />} />
+    <Route path="/home/applications/:id" element={<ApplicationPage />} />
+    <Route path="/company" element={<CompanyPage />} />
     <Route path="/vacancies/:id" element={<VacancyPage />} />
     <Route path="/" element={<App />} />
-  
-    
   </Route>
 )
 

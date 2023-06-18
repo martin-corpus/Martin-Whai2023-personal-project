@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import Header from "./header"
-import Body from "./body"
-import Footer from "./footer"
+import Header from './header'
+import Body from './body'
+import Footer from './footer'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <div className="footer">
         <Footer />
       </div>
-    </>  
+    </>
   )
 }
 
