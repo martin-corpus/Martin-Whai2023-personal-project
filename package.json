@@ -8,7 +8,7 @@
   },
   "main": "server/index.ts",
   "scripts": {
-    "start": "node dist/server/server/index",
+    "start": "node dist/server/server/index.js",
     "test": "vitest",
     "dev": "run-p dev:client dev:server",
     "dev:client": "vite",
