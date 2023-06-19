@@ -4,7 +4,6 @@ const image = '/images/users/john_doe.jpg'
 
 function HiUserName() {
   const { user } = useAuth0()
-
   return (
     <>
       <div className="userContainer">

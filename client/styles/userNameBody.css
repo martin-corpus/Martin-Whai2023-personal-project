@@ -1,0 +1,185 @@
+/******************* USERNAMEBODY *******************/
+
+.userNameBody {
+    background-color: #ffffff;
+    padding-top: 130px;
+  }
+  
+  .userContainer {
+    display: grid;
+    grid-template-columns: minmax(auto, max-content) minmax(auto, max-content);
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .userCircle {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: #dbdbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+  
+  }
+  
+  .userIcon {
+    font-size: 40px;
+    color: rgb(39, 70, 209);
+  }
+  
+  .userIcon img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  #userName {
+    color: rgb(39, 70, 209);
+  }
+  
+  /* //////////APPLICATIONS  */
+  #applications {
+    color: rgb(39, 70, 209);
+    margin: 20px 0 0 10px;
+    font-size: 25px;
+  }
+  
+  .userApplicationsContainer {
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  .userApplications {
+    background-color: #dbdbdb;
+    border: 2px solid rgb(39, 70, 209);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .applicationbox {
+    flex-shrink: 0;
+    width: 210px;
+    height: 180px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: #ffffff;
+    border: 2px solid rgb(39, 70, 209);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .applicationImage {
+   
+    width: 100%;
+    height: 100%; 
+  }
+  
+  .applicationWarning {
+    color: rgb(39, 70, 209);;
+    font-size: 20px;
+  }
+  
+  .leftArrow,
+  .rightArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border: 1px;
+    margin: 10px;
+    font-size: 80px;
+    color: rgb(19, 50, 179);
+  }
+  
+  /* ///////////SEARCH  */
+  
+  #search {
+    color: rgb(39, 70, 209);
+    margin-bottom: 3px;
+    font-size: 30px;
+    
+  }
+  
+  .userSearchContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px; 
+  }
+  
+  .userSearchParameters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .searchLocation,
+  .searchField {
+    /* Add styles for the dropdown options */
+    padding: 20px;
+    border: 2px solid rgb(39, 70, 209);
+    border-radius: 5px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+  }
+  
+  #location,
+  #field {
+    color: rgb(39, 70, 209);
+    font-size: 30px;
+  }
+  
+  .dropdown {
+    width: 200px; 
+    background-color: #f2f2f2; 
+    color: rgb(39, 70, 209); 
+    font-size: 16px; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    outline: none; 
+  
+  }
+  
+  .dropdown:hover {
+    cursor: pointer;
+  }
+  
+  .dropdown:focus {
+    border: 2px solid rgb(39, 70, 209); 
+  }
+  
+  .submitContainer {
+    display: flex;
+    justify-content: center;
+    width: 30%; 
+    margin: 10px auto; 
+  }
+  
+  .searchSubmit {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(39, 70, 209);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .searchSubmit:hover {
+    background-color: rgb(19, 50, 179);
+  }
+  
