@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import HiUserName from '../../components/hiUserName'
 import { useAuth0 } from '@auth0/auth0-react'
-import { Applications } from '../../../models/applications'
 import { useQuery } from '@tanstack/react-query'
 import { getApplicationsByEmail } from '../../apiClient'
 
@@ -15,10 +14,15 @@ export default function UserNameBody() {
   const applicationsQuery = useQuery(['applications', email], () =>
     getApplicationsByEmail(email)
   )
-  const applications: Applications[] = Array.isArray(applicationsQuery.data)
-    ? applicationsQuery.data
-    : []
-  const showArrows = applications.length > 3
+
+  const applications = useMemo(
+    () => applicationsQuery.data || [],
+    [applicationsQuery.data]
+  )
+  const showArrows =
+    applicationsQuery.data && Array.isArray(applicationsQuery.data)
+      ? applications.length > 3
+      : false
 
   useEffect(() => {
     const applicationboxes = document.querySelectorAll('.applicationbox')
