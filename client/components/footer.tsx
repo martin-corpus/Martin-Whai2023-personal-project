@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <>
+    <footer>
       <div className="icons">
         <a
           href="https://www.facebook.com/example"
@@ -33,6 +33,6 @@ export default function Footer() {
           <FaGithub className="icon" />
         </a>
       </div>
-    </>
+    </footer>
   )
 }

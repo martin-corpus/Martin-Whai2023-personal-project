@@ -12,7 +12,7 @@ export default function Body() {
   }
 
   return (
-    <>
+    <body>
       <div className="name">
         <img src={imageUrl} alt="Name" id="name" />
       </div>
@@ -47,6 +47,6 @@ export default function Body() {
           {/* </IfNotAuthenticated> */}
         </div>
       </div>
-    </>
+    </body>
   )
 }
