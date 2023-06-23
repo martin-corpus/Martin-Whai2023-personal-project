@@ -21,7 +21,6 @@ export default function Body() {
       </div>
 
       <div className="loginContainer">
-        {/* USER */}
         <div className="section">
           <div className="circle">
             <span className="loginIcon">
@@ -36,7 +35,6 @@ export default function Body() {
           </IfNotAuthenticated>
         </div>
 
-        {/* COMPANY */}
         <div className="section">
           <div className="circle">
             <span className="loginIcon">

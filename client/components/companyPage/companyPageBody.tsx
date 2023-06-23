@@ -26,9 +26,7 @@ export default function CompanyPageBody() {
     fetchCompany()
   }, [searchParams])
 
-  // REACT QUERY FOR VACANCIES
-
-  const companyId = Number(company?.id) // companyId = NaN
+  const companyId = Number(company?.id)
 
   const vacanciesQuery = useQuery(['vacancies', companyId], () =>
     getVacanciesByCompanyId(companyId)

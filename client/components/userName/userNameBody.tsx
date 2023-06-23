@@ -9,8 +9,6 @@ import { getApplicationsByEmail } from '../../apiClient'
 export default function UserNameBody() {
   const { user } = useAuth0()
 
-  //////////////// APPLICATIONS ///
-
   const [currentIndex, setCurrentIndex] = useState(0)
   const email = user?.email || ''
 
@@ -87,7 +85,6 @@ export default function UserNameBody() {
     }
   }, [currentIndex, applications])
 
-  //////////////// SEARCH ENGINE ///
   const [location, setLocation] = useState('')
   const [field, setField] = useState('')
 

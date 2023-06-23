@@ -1,4 +1,3 @@
-/**********************USERNAMESEARCH BODY ***************/
 .userNameSearchBody {
     background-color: #ffffff;
     padding-top: 130px;
@@ -9,7 +8,6 @@
     margin-bottom: 0px;
     margin-top: 0px;
     font-size: 25px;
-    
   }
 
   .searchResultsContainer {
@@ -17,7 +15,6 @@
     padding: 0px;
     display: flex; 
     justify-content: center; 
-   
   }
   
   .searchResultsRow {
@@ -53,7 +50,7 @@
     margin-right: 0px;
   }
 
-  /* //////////////// ANIMATION */
+  /* //////////////// ANIMATION /////////////*/
 
   @keyframes blinking {
     0%, 100% {
@@ -65,7 +62,6 @@
       border-color: red;
     }
   }
-  
   
   .withVacancies {
     animation: blinking 1.5s linear infinite;

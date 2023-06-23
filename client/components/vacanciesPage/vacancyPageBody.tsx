@@ -9,18 +9,9 @@ import { Vacancies } from '../../../models/vacancies'
 import { Companies } from '../../../models/companies'
 
 export default function VacancyPageBody() {
-  // TODO: change this back to a real user
   const { user } = useAuth0()
-
-  // User | undefined = {
-  //   nickname: User.nickname,
-  //   email: 'johndoe@email.com',
-  // }
-
   const { id } = useParams()
   const vacancyId = Number(id)
-
-  // REFACTOR: this can probably be a single query (get vacancy and company together)
   const vacancyQuery = useQuery(['vacancy', id], () =>
     getVacancyById(vacancyId)
   )
@@ -70,11 +61,11 @@ function VacancyPageContents({
   user: User
 }) {
   const emptyForm: NewApplication = {
-    vacancyId: vacancy.id, //vacancy.id
+    vacancyId: vacancy.id,
     name: user?.nickname ? user.nickname : '',
     email: user?.email ? user.email : '',
-    companyName: company.name, //company.name
-    companyImage: company.image, //company.image
+    companyName: company.name,
+    companyImage: company.image,
     coverLetter: null,
     cv: null,
   }

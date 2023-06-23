@@ -71,7 +71,7 @@ export async function getCompanyById(id: number): Promise<Companies> {
   return response.body
 }
 
-////// POST /api/v1/vacancy/:id
+// POST /api/v1/vacancy/:id
 
 export async function addApplication(
   application: NewApplication

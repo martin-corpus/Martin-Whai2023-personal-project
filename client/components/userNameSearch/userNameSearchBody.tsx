@@ -41,18 +41,16 @@ export default function UserNameSearchBody() {
         <div className="searchResultsSection">
           <h3 id="searchResultsTitle">By Location</h3>
           <div className="searchResultsRow">
-            {locationCompanies.map(
-              ({ image, name, vacancies }, index) => (
-                <div
-                  className={`companybox ${vacancies ? 'withVacancies' : ''}`}
-                  key={index}
-                >
-                  <Link to={`/company?name=${name}`}>
-                    <img src={image} alt={name} className="companyImage" />
-                  </Link>
-                </div>
-              )
-            )}
+            {locationCompanies.map(({ image, name, vacancies }, index) => (
+              <div
+                className={`companybox ${vacancies ? 'withVacancies' : ''}`}
+                key={index}
+              >
+                <Link to={`/company?name=${name}`}>
+                  <img src={image} alt={name} className="companyImage" />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>

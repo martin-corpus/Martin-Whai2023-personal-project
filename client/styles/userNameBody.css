@@ -1,5 +1,3 @@
-/******************* USERNAMEBODY *******************/
-
 .userNameBody {
     background-color: #ffffff;
     padding-top: 130px;
@@ -22,7 +20,6 @@
     align-items: center;
     margin-top: 10px;
     margin-left: 10px;
-  
   }
   
   .userIcon {
@@ -39,7 +36,7 @@
     color: rgb(39, 70, 209);
   }
   
-  /* //////////APPLICATIONS  */
+  /* //////////APPLICATIONS  ///////////////*/
   #applications {
     color: rgb(39, 70, 209);
     margin: 20px 0 0 10px;
@@ -98,7 +95,7 @@
     color: rgb(19, 50, 179);
   }
   
-  /* ///////////SEARCH  */
+  /* ///////////SEARCH  //////////////////*/
   
   #search {
     color: rgb(39, 70, 209);
@@ -124,7 +121,6 @@
   
   .searchLocation,
   .searchField {
-    /* Add styles for the dropdown options */
     padding: 20px;
     border: 2px solid rgb(39, 70, 209);
     border-radius: 5px;
@@ -150,7 +146,6 @@
     border: none; 
     border-radius: 5px; 
     outline: none; 
-  
   }
   
   .dropdown:hover {

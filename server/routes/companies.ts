@@ -4,7 +4,7 @@ import {
   getCompaniesByField,
   getCompanyByName,
 } from '../db/dbcompanies'
-// import { Companies } from "../../models/companies"
+
 const router = express.Router()
 
 //server = /api/v1
