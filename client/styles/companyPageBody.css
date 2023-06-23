@@ -21,7 +21,6 @@
     font-weight: bold;
     color: rgb(39, 70, 209);
     font-size: 25px;
-    text-decoration: underline;
 }
 
 .companyLabelContainer p:first-child {
@@ -61,8 +60,8 @@
 }
 
 .vacancyNotification {
-    background-color: red;
-    color: white;
+    background-color: rgb(252, 18, 18);
+    color: rgb(37, 37, 37);
     padding: 10px 20px;
     border-radius: 10px;
     margin-bottom: 10px;

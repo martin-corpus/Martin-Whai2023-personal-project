@@ -78,25 +78,25 @@ export default function CompanyPageBody() {
           </div>
           <div className="companyLabelContainer">
             <p>
-              <span className="label">Company Name</span>
+              <span className="label">Company Name:</span>
             </p>
             <p>{company.name}</p>
           </div>
           <div className="companyLabelContainer">
             <p>
-              <span className="label">Location</span>
+              <span className="label">Location:</span>
             </p>
             <p>{company.location}</p>
           </div>
           <div className="companyLabelContainer">
             <p>
-              <span className="label">Field</span>
+              <span className="label">Field:</span>
             </p>
             <p>{company.field}</p>
           </div>
           <div className="companyLabelContainer">
             <p>
-              <span className="label">Description</span>
+              <span className="label">Description:</span>
             </p>
             <p>{company.description}</p>
           </div>
