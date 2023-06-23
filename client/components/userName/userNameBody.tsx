@@ -155,7 +155,9 @@ export default function UserNameBody() {
                   value={location}
                   onChange={handleLocationChange}
                 >
-                  <option value="">-- Select Location --</option>
+                  <option value="" disabled hidden>
+                    -- Select Location --
+                  </option>
                   <option value="North Island - North">
                     North Island - North
                   </option>
@@ -186,7 +188,9 @@ export default function UserNameBody() {
                   value={field}
                   onChange={handleFieldChange}
                 >
-                  <option value="">-- Select Field --</option>
+                  <option value="" disabled hidden>
+                    -- Select Field --
+                  </option>
                   <option value="Software Development and Engineering">
                     Software Development/Engineering
                   </option>
