@@ -5,28 +5,28 @@ export default function Footer() {
     <footer>
       <div className="icons">
         <a
-          href="https://whai2023-martin-personal-project.devacademy.nz/"
+          href="https://www.facebook.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaFacebook className="icon" />
         </a>
         <a
-          href="https://whai2023-martin-personal-project.devacademy.nz/"
+          href="https://www.instagram.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaInstagram className="icon" />
         </a>
         <a
-          href="https://whai2023-martin-personal-project.devacademy.nz/"
+          href="https://www.linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin className="icon" />
         </a>
         <a
-          href="https://whai2023-martin-personal-project.devacademy.nz/"
+          href="https://www.github.com"
           target="_blank"
           rel="noopener noreferrer"
         >
