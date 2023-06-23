@@ -14,9 +14,9 @@ export default function Body() {
   return (
     <main>
       <div className="name">
-        <img src={imageUrl} alt="Name" id="name" />
+        <img src={imageUrl} alt="Company Name" id="name" />
       </div>
-      <div>
+      <div className="slogan">
         <p id="slogan">WHILE YOU WORK, GROOVE YOURSELF TO EMPLOYMENT. </p>
       </div>
 

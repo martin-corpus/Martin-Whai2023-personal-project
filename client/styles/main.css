@@ -104,14 +104,20 @@ body {
 }
 
 #name {
-  width: 150%;
+  width: 500px;
   height: auto;
   margin-top: 10px;
 }
 
+.slogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #slogan {
   color: rgb(54, 88, 236);
-  font-size: medium;
+  font-size: 17px;
 }
 
 /***************** LOGINS ********************/
