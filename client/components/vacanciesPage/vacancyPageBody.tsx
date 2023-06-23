@@ -208,6 +208,7 @@ export function Form({ initialData, onSubmit, isDisabled }: FormProps) {
       aria-label="Add Application Form"
     >
       <fieldset disabled={isDisabled}>
+        <legend>Add Application</legend>
         <div className="vacancyInputsContainer">
           <div className="inputContainer">
             <label htmlFor="vacancyNumber">Vacancy #:</label>
