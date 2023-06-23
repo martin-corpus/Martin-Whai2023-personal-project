@@ -151,9 +151,11 @@ export default function UserNameBody() {
               <div className="location">
                 <label htmlFor="location">Location</label>
                 <select
+                  id="location"
                   className="dropdown"
                   value={location}
                   onChange={handleLocationChange}
+                  aria-label="Select Location"
                 >
                   <option value="" disabled hidden>
                     -- Select Location --
@@ -184,9 +186,11 @@ export default function UserNameBody() {
               <div className="field">
                 <label htmlFor="field">Field</label>
                 <select
+                  id="field"
                   className="dropdown"
                   value={field}
                   onChange={handleFieldChange}
+                  aria-label="Select Field"
                 >
                   <option value="" disabled hidden>
                     -- Select Field --
