@@ -137,12 +137,6 @@
     font-size: 30px;
   }
 
-  .location h3,
-  .field h3 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-  
   .dropdown {
     width: 200px; 
     background-color: #f2f2f2; 
