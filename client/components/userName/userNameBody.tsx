@@ -149,7 +149,7 @@ export default function UserNameBody() {
           <div className="userSearchParameters">
             <div className="searchLocation">
               <div className="location">
-                <label htmlFor="location">Location</label>
+                <h3>Location</h3>
                 <select
                   className="dropdown"
                   value={location}
@@ -180,7 +180,7 @@ export default function UserNameBody() {
 
             <div className="searchField">
               <div className="field">
-                <label htmlFor="field">Field</label>
+                <h3>Field</h3>
                 <select
                   className="dropdown"
                   value={field}

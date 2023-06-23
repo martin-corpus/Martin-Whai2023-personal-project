@@ -136,6 +136,12 @@
     color: rgb(39, 70, 209);
     font-size: 30px;
   }
+
+  .location h3,
+  .field h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
   
   .dropdown {
     width: 200px; 
