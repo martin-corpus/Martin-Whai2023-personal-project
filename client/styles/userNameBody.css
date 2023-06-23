@@ -129,6 +129,7 @@
     flex-direction: column;
     align-items: center;
     width: 170px;
+    font-size: 30px;
   }
   
   #location,

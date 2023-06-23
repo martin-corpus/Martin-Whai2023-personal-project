@@ -109,7 +109,7 @@ export default function UserNameBody() {
       <HiUserName />
 
       <div className="userApplicationsContainer">
-        <h3 id="applications">Applications</h3>
+        <h1 id="applications">Applications</h1>
         <div className="userApplications">
           {showArrows && (
             <div className="leftArrow">

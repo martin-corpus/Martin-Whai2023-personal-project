@@ -11,11 +11,11 @@ export default function Header2() {
   }
 
   return (
-    <>
+    <header>
       <div className="headerContainer">
         <a href="/home" id="Logo">
           <div className="logoContainer">
-            <img src={imageUrl} alt="Logo" id="logo" />
+            <img src={imageUrl} alt="Whistle Company Logo" id="logo" />
             <span id="headerHome">Home</span>
           </div>
         </a>
@@ -25,6 +25,6 @@ export default function Header2() {
           </IfAuthenticated>
         </div>
       </div>
-    </>
+    </header>
   )
 }
