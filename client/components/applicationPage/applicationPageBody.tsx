@@ -98,31 +98,31 @@ export default function ApplicationPageBody() {
 
         <div className="vacancyLabelContainer">
           <p>
-            <span className="vacancylabel">Position</span>
+            <span className="vacancylabel">Position:</span>
           </p>
           <p>{vacancy.position}</p>
         </div>
         <div className="vacancyLabelContainer">
           <p>
-            <span className="vacancylabel">Salary</span>
+            <span className="vacancylabel">Salary:</span>
           </p>
           <p>{vacancy.salary}</p>
         </div>
         <div className="vacancyLabelContainer">
           <p>
-            <span className="vacancylabel">Job Description</span>
+            <span className="vacancylabel">Job Description:</span>
           </p>
           <p>{vacancy.jobDescription}</p>
         </div>
         <div className="vacancyLabelContainer">
           <p>
-            <span className="vacancylabel">Requirements</span>
+            <span className="vacancylabel">Requirements:</span>
           </p>
           <p>{vacancy.requirements}</p>
         </div>
         <div className="vacancyLabelContainer">
           <p>
-            <span className="vacancylabel">Deadline</span>
+            <span className="vacancylabel">Deadline:</span>
           </p>
           <p>{vacancy.deadline}</p>
         </div>
