@@ -39,7 +39,7 @@ export default function UserNameSearchBody() {
 
       <div className="searchResultsContainer">
         <div className="searchResultsSection">
-          <h3 id="searchResultsTitle">By Location</h3>
+          <h1 id="searchResultsTitle">By Location</h1>
           <div className="searchResultsRow">
             {locationCompanies.map(({ image, name, vacancies }, index) => (
               <div
@@ -57,7 +57,7 @@ export default function UserNameSearchBody() {
 
       <div className="searchResultsContainer">
         <div className="searchResultsSection">
-          <h3 id="searchResultsTitle">By Field</h3>
+          <h1 id="searchResultsTitle">By Field</h1>
           <div className="searchResultsRow">
             {fieldCompanies.map(({ image, name, vacancies }, index) => (
               <div
