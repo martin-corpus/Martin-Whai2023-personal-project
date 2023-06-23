@@ -148,10 +148,9 @@ export default function UserNameBody() {
         <form onSubmit={handleFormSubmit}>
           <div className="userSearchParameters">
             <div className="searchLocation">
-              <label htmlFor="location" id="location">
-                Location
-              </label>
+              <label htmlFor="location">Location</label>
               <select
+                id="location"
                 className="dropdown"
                 value={location}
                 onChange={handleLocationChange}
@@ -179,10 +178,9 @@ export default function UserNameBody() {
             </div>
 
             <div className="searchField">
-              <label htmlFor="field" id="field">
-                Field
-              </label>
+              <label htmlFor="field">Field</label>
               <select
+                id="field"
                 className="dropdown"
                 value={field}
                 onChange={handleFieldChange}
@@ -205,9 +203,7 @@ export default function UserNameBody() {
           </div>
           <div className="submitContainer">
             <Link to={`/home/search?location=${location}&field=${field}`}>
-              <button type="submit" className="searchSubmit">
-                Submit
-              </button>
+              <button className="searchSubmit">Submit</button>
             </Link>
           </div>
         </form>
