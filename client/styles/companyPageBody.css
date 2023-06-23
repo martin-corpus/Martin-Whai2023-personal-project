@@ -60,12 +60,14 @@
 }
 
 .vacancyNotification {
-    background-color: rgb(252, 18, 18);
-    color: rgb(37, 37, 37);
+    border: 5px solid rgb(252, 18, 18);
+    background-color:  #dbdbdb;
+    color: rgb(39, 70, 209);
     padding: 10px 20px;
     border-radius: 10px;
     margin-bottom: 10px;
     text-align: center;
+    font-weight: bold;
 }
   
 .vacanciesList {
@@ -81,7 +83,7 @@
     text-decoration: none;
     color: rgb(39, 70, 209);
     display: block;
-    background-color: #dbdbdb;;
+    background-color: #dbdbdb;
 }
   
 .vacancyItemContent {
