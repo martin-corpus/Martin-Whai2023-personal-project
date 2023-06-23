@@ -129,11 +129,10 @@
     flex-direction: column;
     align-items: center;
     width: 170px;
-    font-size: 30px;
   }
   
-  #location,
-  #field {
+  .location,
+  .field {
     color: rgb(39, 70, 209);
     font-size: 30px;
   }

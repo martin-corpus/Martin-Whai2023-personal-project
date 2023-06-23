@@ -11,7 +11,7 @@ export default function Header2() {
   }
 
   return (
-    <header>
+    <>
       <div className="headerContainer">
         <a href="/home" id="Logo">
           <div className="logoContainer">
@@ -25,6 +25,6 @@ export default function Header2() {
           </IfAuthenticated>
         </div>
       </div>
-    </header>
+    </>
   )
 }

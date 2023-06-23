@@ -143,62 +143,66 @@ export default function UserNameBody() {
       </div>
 
       <div className="userSearchContainer">
-        <h3 id="search">Search For Companies:</h3>
+        <h2 id="search">Search For Companies:</h2>
 
         <form onSubmit={handleFormSubmit}>
           <div className="userSearchParameters">
             <div className="searchLocation">
-              <label htmlFor="location">Location</label>
-              <select
-                id="location"
-                className="dropdown"
-                value={location}
-                onChange={handleLocationChange}
-              >
-                <option value="">-- Select Location --</option>
-                <option value="North Island - North">
-                  North Island - North
-                </option>
-                <option value="North Island - Central">
-                  North Island - Central
-                </option>
-                <option value="North Island - South">
-                  North Island - South
-                </option>
-                <option value="South Island - North">
-                  South Island - North
-                </option>
-                <option value="South Island - Central">
-                  South Island - Central
-                </option>
-                <option value="South Island - South">
-                  South Island - South
-                </option>
-              </select>
+              <div className="location">
+                <label htmlFor="location">Location</label>
+                <select
+                  className="dropdown"
+                  value={location}
+                  onChange={handleLocationChange}
+                >
+                  <option value="">-- Select Location --</option>
+                  <option value="North Island - North">
+                    North Island - North
+                  </option>
+                  <option value="North Island - Central">
+                    North Island - Central
+                  </option>
+                  <option value="North Island - South">
+                    North Island - South
+                  </option>
+                  <option value="South Island - North">
+                    South Island - North
+                  </option>
+                  <option value="South Island - Central">
+                    South Island - Central
+                  </option>
+                  <option value="South Island - South">
+                    South Island - South
+                  </option>
+                </select>
+              </div>
             </div>
 
             <div className="searchField">
-              <label htmlFor="field">Field</label>
-              <select
-                id="field"
-                className="dropdown"
-                value={field}
-                onChange={handleFieldChange}
-              >
-                <option value="">-- Select Field --</option>
-                <option value="Software Development and Engineering">
-                  Software Development/Engineering
-                </option>
-                <option value="Data Science and Analytics">
-                  Data Science/Analytics
-                </option>
-                <option value="Cybersecurity">Cybersecurity</option>
-                <option value="Network Engineering">Network Engineering</option>
-                <option value="Cloud Computing">Cloud Computing</option>
-                <option value="Artificial Intelligence (AI) and Machine Learning (ML)">
-                  Artificial Intelligence (AI) and Machine Learning (ML)
-                </option>
-              </select>
+              <div className="field">
+                <label htmlFor="field">Field</label>
+                <select
+                  className="dropdown"
+                  value={field}
+                  onChange={handleFieldChange}
+                >
+                  <option value="">-- Select Field --</option>
+                  <option value="Software Development and Engineering">
+                    Software Development/Engineering
+                  </option>
+                  <option value="Data Science and Analytics">
+                    Data Science/Analytics
+                  </option>
+                  <option value="Cybersecurity">Cybersecurity</option>
+                  <option value="Network Engineering">
+                    Network Engineering
+                  </option>
+                  <option value="Cloud Computing">Cloud Computing</option>
+                  <option value="Artificial Intelligence (AI) and Machine Learning (ML)">
+                    Artificial Intelligence (AI) and Machine Learning (ML)
+                  </option>
+                </select>
+              </div>
             </div>
           </div>
           <div className="submitContainer">
