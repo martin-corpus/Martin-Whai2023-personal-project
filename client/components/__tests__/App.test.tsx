@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { renderRoute } from '../../test/utils'
 import { screen, waitFor } from '@testing-library/react'
 
@@ -16,20 +16,18 @@ describe('User home page', () => {
     })
   })
 
-  it.todo('footer navigation to the correct routes when clicked', async () => {
+  it('footer navigations work to correct routes when clicked', async () => {
     renderRoute('/')
     await waitFor(() => {
-      expect(screen.queryByText(/loading/i)).not.toBeInTheDocument()
-    })
+      const facebookLink = screen.getByRole('link', { name: 'Facebook' })
+      const instagramLink = screen.getByRole('link', { name: 'Instagram' })
+      const linkedInLink = screen.getByRole('link', { name: 'LinkedIn' })
+      const gitHubLink = screen.getByRole('link', { name: 'GitHub' })
 
-    const playPianoLink = screen.getByRole('link', { name: 'Play Piano' })
-    const becomeASingerLink = screen.getByRole('link', {
-      name: 'Become A Singer',
+      expect(facebookLink).toBeInTheDocument()
+      expect(instagramLink).toBeInTheDocument()
+      expect(linkedInLink).toBeInTheDocument()
+      expect(gitHubLink).toBeInTheDocument()
     })
-    const playgroundLink = screen.getByRole('link', { name: 'Playground' })
-
-    expect(playPianoLink.getAttribute('href')).toBe('/WhaiPiano')
-    expect(becomeASingerLink.getAttribute('href')).toBe('/BecomeASinger')
-    expect(playgroundLink.getAttribute('href')).toBe('/Playground')
   })
 })
